@@ -1,2 +1,5 @@
-rolling_udio
-playground
+__pycache__/
+.mypy_cache/
+rolling_udio/
+clap_embeddings/
+playground/
