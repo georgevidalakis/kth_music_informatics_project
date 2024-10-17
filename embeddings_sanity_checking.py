@@ -15,7 +15,7 @@ from sklearn.ensemble import RandomForestClassifier  # type: ignore
 from sklearn.neural_network import MLPClassifier  # type: ignore
 from sklearn.model_selection import train_test_split  # type: ignore
 
-from constants import AI_EMBEDDINGS_DIR_PATH, HUMAN_EMBEDDINGS_DIR_PATH, SPLIT_STRATEGY, SplitStrategy
+from constants import AI_EMBEDDINGS_DIR_PATH, HUMAN_EMBEDDINGS_DIR_PATH, SPLIT_STRATEGY, SplitStrategy, Label
 
 
 def load_audio_embeddings(audio_embeddings_file_path: str) -> np.ndarray:
@@ -80,7 +80,7 @@ if __name__ == '__main__':
     X_human, human_embeddings_files_names = get_X(HUMAN_EMBEDDINGS_DIR_PATH, audio_embedding_aggregation_func)
     if SPLIT_STRATEGY == SplitStrategy.AUTHORS_IGNORED:
         X = np.vstack((X_ai, X_human))
-        y = np.array(['ai'] * len(X_ai) + ['human'] * len(X_human))
+        y = np.array([Label.AI] * len(X_ai) + [Label.HUMAN] * len(X_human))
 
         X_train_val, X_test, y_train_val, y_test = train_test_split(X, y, test_size=200, stratify=y)
         X_train, X_val, y_train, y_val = train_test_split(
@@ -118,9 +118,9 @@ if __name__ == '__main__':
         X_train = np.vstack((X_ai_train, X_human_train_list))
         X_val = np.vstack((X_ai_val, X_human_val_list))
         X_test = np.vstack((X_ai_test, X_human_test_list))
-        y_train = np.array(['ai'] * len(X_ai_train) + ['human'] * len(X_human_train_list))
-        y_val = np.array(['ai'] * len(X_ai_val) + ['human'] * len(X_human_val_list))
-        y_test = np.array(['ai'] * len(X_ai_test) + ['human'] * len(X_human_test_list))
+        y_train = np.array([Label.AI] * len(X_ai_train) + [Label.HUMAN] * len(X_human_train_list))
+        y_val = np.array([Label.AI] * len(X_ai_val) + [Label.HUMAN] * len(X_human_val_list))
+        y_test = np.array([Label.AI] * len(X_ai_test) + [Label.HUMAN] * len(X_human_test_list))
     else:
         raise RuntimeError(f'Unexpected split strategy: {SPLIT_STRATEGY}')
 

@@ -2,6 +2,11 @@ import os
 from enum import Enum
 
 
+class Label(Enum):
+    AI = 0
+    HUMAN = 1
+
+
 class SplitStrategy(str, Enum):
     AUTHORS_IGNORED = 'authors_ignored'
     AUTHORS_CONSIDERED = 'authors_considered'
@@ -18,3 +23,5 @@ AI_EMBEDDINGS_DIR_PATH = os.path.join(EMBEDDINGS_DIR_PATH, 'udio_500')
 HUMAN_EMBEDDINGS_DIR_PATH = os.path.join(EMBEDDINGS_DIR_PATH, 'rolling_500')
 
 SPLIT_STRATEGY = SplitStrategy.AUTHORS_CONSIDERED
+
+NUM_FEED_FORWARD_EPOCHS = 10
