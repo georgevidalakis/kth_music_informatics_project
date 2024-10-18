@@ -4,7 +4,7 @@ from collections import Counter
 from typing import Tuple, List, Callable
 
 import numpy as np
-import tqdm
+import tqdm  # type: ignore
 from sklearn.preprocessing import StandardScaler  # type: ignore
 from sklearn.model_selection import train_test_split  # type: ignore
 import torch
@@ -12,7 +12,9 @@ from torch.utils.data import TensorDataset, DataLoader
 from feed_forward import FeedForward
 import torch.nn as nn
 
-from constants import AI_EMBEDDINGS_DIR_PATH, HUMAN_EMBEDDINGS_DIR_PATH, SPLIT_STRATEGY, SplitStrategy, Label, NUM_FEED_FORWARD_EPOCHS
+from constants import (
+    AI_EMBEDDINGS_DIR_PATH, HUMAN_EMBEDDINGS_DIR_PATH, SPLIT_STRATEGY, SplitStrategy, Label, NUM_FEED_FORWARD_EPOCHS
+)
 
 
 def load_audio_embeddings(audio_embeddings_file_path: str) -> np.ndarray:
@@ -188,3 +190,5 @@ if __name__ == '__main__':
 
     accuracy = correct_cnt / total_cnt
     print(f'Test Accuracy: {accuracy:.4f}')
+
+    torch.save(model.state_dict(), 'classifier_checkpoints/feed_forward.pt')
