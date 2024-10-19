@@ -11,6 +11,7 @@ import torch
 from torch.utils.data import TensorDataset, DataLoader
 from feed_forward import FeedForward
 import torch.nn as nn
+import joblib  # type: ignore
 
 from constants import (
     AI_EMBEDDINGS_DIR_PATH, HUMAN_EMBEDDINGS_DIR_PATH, SPLIT_STRATEGY, SplitStrategy, Label, NUM_FEED_FORWARD_EPOCHS
@@ -191,4 +192,5 @@ if __name__ == '__main__':
     accuracy = correct_cnt / total_cnt
     print(f'Test Accuracy: {accuracy:.4f}')
 
+    joblib.dump(scaler, 'classifier_checkpoints/feed_forward_scaler.gz')
     torch.save(model.state_dict(), 'classifier_checkpoints/feed_forward.pt')
