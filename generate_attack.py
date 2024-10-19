@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import os
 import math
+import json
 from collections.abc import Iterable
 from typing import Tuple, List, Optional
 
@@ -10,10 +12,11 @@ import numpy as np
 import torch.nn as nn
 import soundfile as sf  # type: ignore
 
-from constants import CLAP_SR, Label
+from utils import seed_everything
 from feed_forward import FeedForward
+from embeddings_computing import load_clap_music_model
 from embeddings_computing import load_audio_data_for_clap
-from embeddings_computing import quantize_array, load_clap_music_model
+from constants import CLAP_SR, Label, AI_AUDIO_DIR_PATH, ADVERSARIAL_AUDIO_DIR_PATH
 
 
 class AudioWindowsDataIterator:
@@ -92,16 +95,40 @@ def limit_snr(
         min_snr: Optional[float],
         ) -> Tuple[torch.Tensor, float]:
     snr = get_snr(pure_audio_data, adversarial_audio_data)
-    noise_audio_data = pure_audio_data - adversarial_audio_data
     if min_snr is not None and snr < min_snr:
+        noise_audio_data = pure_audio_data - adversarial_audio_data
         noise_audio_data *= 10. ** ((snr - min_snr) / 20)
         adversarial_audio_data = pure_audio_data + noise_audio_data
         snr = get_snr(pure_audio_data, adversarial_audio_data)
     return adversarial_audio_data, snr
 
 
+def get_target_pred_confidence(y_pred: torch.Tensor, target_label: int) -> float:
+    if target_label:
+        return y_pred.item()
+    return 1 - y_pred.item()
+
+
+class AdversarialResult:
+    def __init__(
+            self,
+            audio_file_path: str,
+            init_target_pred_confidence: float,
+            num_iter: int,
+            max_target_pred_confidence: float,
+            argmax_adversarial_audio_data: np.ndarray,
+            argmax_snr: float,
+            ) -> None:
+        self.audio_file_path = audio_file_path
+        self.init_target_pred_confidence = init_target_pred_confidence
+        self.num_iter = num_iter
+        self.max_target_pred_confidence = max_target_pred_confidence
+        self.argmax_adversarial_audio_data = argmax_adversarial_audio_data
+        self.argmax_snr = argmax_snr
+
+
 def get_adversarial_audio_data(
-        audio_data: np.ndarray,
+        audio_file_path: str,
         target_label: int,
         window_size: int,
         hop_size: int,
@@ -111,9 +138,10 @@ def get_adversarial_audio_data(
         classifier: nn.Module,
         learning_rate: float,
         max_iter: int,
-        ) -> np.ndarray:
+        required_target_pred_confidence: float,
+        ) -> AdversarialResult:
+    audio_data = load_audio_data_for_clap(audio_file_path)
     pure_audio_data = torch.from_numpy(audio_data)
-    audio_data = quantize_array(audio_data)
     adversarial_audio_data = torch.tensor(audio_data, requires_grad=True, device='cuda:0')
     target_label_tensor = torch.tensor([target_label], dtype=torch.float, device='cuda:0')
     audio_windows_embeddings_extractor = AudioWindowsEmbeddingsExtractor(
@@ -122,39 +150,90 @@ def get_adversarial_audio_data(
     clap_model.eval()
     classifier.eval()
     criterion = nn.BCELoss()
+    init_target_pred_confidence = None
+    max_target_pred_confidence = float('-inf')
+    argmax_adversarial_audio_data = None
+    argmax_snr = None
+    last_snr = 0.
     for iter_idx in range(max_iter):
         audio_windows_embeddings = audio_windows_embeddings_extractor(adversarial_audio_data)
         audio_embedding = torch.mean(audio_windows_embeddings, dim=0)
         y_pred = classifier(audio_embedding)
         loss = criterion(y_pred, target_label_tensor)
+        target_pred_confidence = get_target_pred_confidence(y_pred, target_label)
+        if init_target_pred_confidence is None:
+            init_target_pred_confidence = target_pred_confidence
+        if target_pred_confidence > max_target_pred_confidence:
+            max_target_pred_confidence = target_pred_confidence
+            argmax_adversarial_audio_data = adversarial_audio_data.detach().cpu().numpy()
+            argmax_snr = last_snr
+            if target_pred_confidence >= required_target_pred_confidence:
+                break
         loss.backward()
         assert adversarial_audio_data.grad is not None
         adversarial_audio_data = adversarial_audio_data.detach() - learning_rate * adversarial_audio_data.grad
         adversarial_audio_data, snr = limit_snr(pure_audio_data, adversarial_audio_data.detach().cpu(), min_snr=min_snr)
-        print(f'Iter {iter_idx}, y_pred {y_pred.item():.5f}, loss {loss:.5f}, snr {snr:.5f}')
+        last_snr = snr
+        # print(f'Iter {iter_idx}, target_pred_confidence {target_pred_confidence:.5f}, loss {loss:.5f}, snr {snr:.5f}')
         adversarial_audio_data.requires_grad = True
-        # reset gradients
         clap_model.zero_grad()
         classifier.zero_grad()
-    return adversarial_audio_data.detach().cpu().numpy()
+    assert init_target_pred_confidence is not None
+    assert argmax_adversarial_audio_data is not None
+    assert argmax_snr is not None
+    return AdversarialResult(
+        audio_file_path=audio_file_path,
+        init_target_pred_confidence=init_target_pred_confidence,
+        max_target_pred_confidence=max_target_pred_confidence,
+        num_iter=iter_idx,
+        argmax_adversarial_audio_data=argmax_adversarial_audio_data,
+        argmax_snr=argmax_snr,
+    )
 
 
 if __name__ == '__main__':
-    audio_data = load_audio_data_for_clap(audio_file_path='example.mp3')
+    seed_everything(42)
     clap_model = load_clap_music_model(use_cuda=True)
     classifier = FeedForward(input_size=512).to('cuda:0')
     classifier.load_state_dict(torch.load('classifier_checkpoints/feed_forward.pt'))
-    adversarial_audio_data = get_adversarial_audio_data(
-        audio_data=audio_data,
-        target_label=Label.HUMAN.value,
-        window_size=int(10 * CLAP_SR),
-        hop_size=int(10 * CLAP_SR),
-        max_batch_size=4,
-        min_snr=65.,
-        clap_model=clap_model,
-        classifier=classifier,
-        learning_rate=0.001,
-        max_iter=1000,
-    )
-    # save adversarial audio as audio file
-    sf.write('adversarial_example.wav', data=adversarial_audio_data, samplerate=CLAP_SR)
+    adversarial_results: List[AdversarialResult] = []
+    for audio_file_name in os.listdir(AI_AUDIO_DIR_PATH)[:3]:
+        print(f'Processing {audio_file_name}')
+        audio_file_path = os.path.join(AI_AUDIO_DIR_PATH, audio_file_name)
+        adversarial_result = get_adversarial_audio_data(
+            audio_file_path=audio_file_path,
+            target_label=Label.HUMAN.value,
+            window_size=int(10 * CLAP_SR),
+            hop_size=int(10 * CLAP_SR),
+            max_batch_size=4,
+            min_snr=60.,
+            clap_model=clap_model,
+            classifier=classifier,
+            learning_rate=0.0001,
+            max_iter=20,
+            required_target_pred_confidence=0.9,
+        )
+        adversarial_results.append(adversarial_result)
+        print(f'init_target_pred_confidence {adversarial_result.init_target_pred_confidence:.5f}')
+        print(f'adversarial_target_pred_confidence {adversarial_result.max_target_pred_confidence:.5f}')
+        print(f'num_iter {adversarial_result.num_iter}')
+        print(f'argmax_snr {adversarial_result.argmax_snr:.5f}')
+        adversarial_audio_file_path = os.path.join(ADVERSARIAL_AUDIO_DIR_PATH, audio_file_name)
+        sf.write(adversarial_audio_file_path, data=adversarial_result.argmax_adversarial_audio_data, samplerate=CLAP_SR)
+        print()
+
+    with open('adversarial_results.json', 'w') as f:
+        json.dump(
+            [
+                {
+                    'audio_file_path': adversarial_result.audio_file_path,
+                    'init_target_pred_confidence': adversarial_result.init_target_pred_confidence,
+                    'max_target_pred_confidence': adversarial_result.max_target_pred_confidence,
+                    'num_iter': adversarial_result.num_iter,
+                    'argmax_snr': adversarial_result.argmax_snr,
+                }
+                for adversarial_result in adversarial_results
+            ],
+            f,
+            indent=4,
+        )
