@@ -3,10 +3,11 @@ import random
 from collections import Counter
 from typing import Tuple, List, Callable
 
-import numpy as np
+import numpy as np # type: ignore
 import tqdm  # type: ignore
 from sklearn.preprocessing import StandardScaler  # type: ignore
 from sklearn.model_selection import train_test_split  # type: ignore
+from sklearn.metrics import roc_auc_score, roc_curve, f1_score, ConfusionMatrixDisplay, confusion_matrix # type: ignore
 import torch
 from torch.utils.data import TensorDataset, DataLoader
 from feed_forward import FeedForward
@@ -16,7 +17,7 @@ import joblib  # type: ignore
 from constants import (
     AI_EMBEDDINGS_DIR_PATH, HUMAN_EMBEDDINGS_DIR_PATH, SPLIT_STRATEGY, SplitStrategy, Label, NUM_FEED_FORWARD_EPOCHS
 )
-
+from utils import seed_everything
 
 def load_audio_embeddings(audio_embeddings_file_path: str) -> np.ndarray:
     return np.load(audio_embeddings_file_path)
@@ -72,10 +73,9 @@ def train_test_split_authors(authors: List[str], test_size: int) -> Tuple[List[s
 
 
 if __name__ == '__main__':
-    random.seed(42)
-    np.random.seed(42)
-    torch.manual_seed(42)
-
+    # Fixing seeds for determinsim and reproducibility
+    seed_everything(42)
+    
     audio_embedding_aggregation_func = get_first_embedding
 
     X_ai, _ = get_X(AI_EMBEDDINGS_DIR_PATH, audio_embedding_aggregation_func)
@@ -137,11 +137,11 @@ if __name__ == '__main__':
     else:
         raise RuntimeError(f'Unexpected split strategy: {SPLIT_STRATEGY}')
 
-    scaler = StandardScaler()
-    X_train = scaler.fit_transform(X_train)
-    X_val = scaler.transform(X_val)
-    X_adv_val = scaler.transform(X_adv_val)
-    X_test = scaler.transform(X_test)
+    #scaler = StandardScaler()
+    #X_train = scaler.fit_transform(X_train)
+    #X_val = scaler.transform(X_val)
+    #X_adv_val = scaler.transform(X_adv_val)
+    #X_test = scaler.transform(X_test)
 
     train_dataset = TensorDataset(torch.from_numpy(X_train), torch.tensor(y_train, dtype=torch.float).view(-1, 1))
     val_dataset = TensorDataset(torch.from_numpy(X_val), torch.tensor(y_val, dtype=torch.float).view(-1, 1))
@@ -158,39 +158,145 @@ if __name__ == '__main__':
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
+    train_losses = []
+    val_losses = []
+    train_accuracies = []
+    val_accuracies = []
+
     for epoch in range(NUM_FEED_FORWARD_EPOCHS):
         model.train()
+        epoch_train_loss = 0
         for X_batch, y_batch in train_dataloader:
             optimizer.zero_grad()
-            y_pred = model(X_batch)
+            y_pred ,_= model(X_batch)
             loss = criterion(y_pred, y_batch)
             loss.backward()
             optimizer.step()
+            epoch_train_loss += loss.item()
+
+        train_losses.append(epoch_train_loss / len(train_dataloader))
 
         model.eval()
+        y_train_list = []
+        y_pred_train_list = []
+        with torch.no_grad():
+            correct_cnt = 0
+            total_cnt = 0
+            for X_batch, y_batch in train_dataloader:
+                y_pred = torch.round(model(X_batch)[0])
+                y_train_list.extend(y_batch.numpy())
+                y_pred_train_list.extend(y_pred.numpy())
+                correct_cnt += (y_pred == y_batch).sum().item()
+                total_cnt += len(y_batch)
+
+        train_accuracy = correct_cnt / total_cnt
+        train_accuracies.append(train_accuracy)
+        y_train = np.array(y_train_list)
+        y_pred_train = np.array(y_pred_train_list)
+
+        #print(f'Test Accuracy: {accuracy:.4f} Test AUC: {roc_auc_score(y_test, y_pred_test):.4f}')
+        #print(f'Train F1 Score: {f1_score(y_test, y_pred_test):.4f}')
+        #print(f'Epoch: {epoch},Validation Accuracy: {train_accuracy:.4f}')
+
+
+        epoch_val_loss = 0
+        y_val_list = []
+        y_pred_val_list = []
         with torch.no_grad():
             correct_cnt = 0
             total_cnt = 0
             for X_batch, y_batch in val_dataloader:
-                y_pred = torch.round(model(X_batch))
+                y_pred = torch.round(model(X_batch)[0])
+                loss = criterion(y_pred, y_batch)
+                epoch_val_loss += loss.item()
                 correct_cnt += (y_pred == y_batch).sum().item()
                 total_cnt += len(y_batch)
+                y_val_list.extend(y_batch.numpy())
+                y_pred_val_list.extend(y_pred.numpy())
 
-        accuracy = correct_cnt / total_cnt
-        print(f'Epoch: {epoch}, Accuracy: {accuracy:.4f}')
+        y_val = np.array(y_val_list)
+        y_pred_val = np.array(y_pred_val_list)
+        #val_accuracies.append(epoch_tra_loss / len(train_dataloader))
+        val_losses.append(epoch_val_loss / len(val_dataloader))
+
+        val_accuracy = correct_cnt / total_cnt
+        val_accuracies.append(val_accuracy)
+        print(f'Epoch: {epoch},Train Accuracy: {train_accuracy:.4f}, Validation Accuracy: {val_accuracy:.4f} Train F1 Score: {f1_score(y_train, y_pred_train):.4f} Train AUC: {roc_auc_score(y_train, y_pred_train):.4f}')
 
     # testing
     model.eval()
+    y_test_list = []
+    y_pred_test_list = []
     with torch.no_grad():
         correct_cnt = 0
         total_cnt = 0
         for X_batch, y_batch in test_dataloader:
-            y_pred = torch.round(model(X_batch))
+            y_pred = torch.round(model(X_batch)[0])
             correct_cnt += (y_pred == y_batch).sum().item()
             total_cnt += len(y_batch)
+            y_test_list.extend(y_batch.numpy())
+            y_pred_test_list.extend(y_pred.numpy())
 
+    y_test = np.array(y_test_list)
+    y_pred_test = np.array(y_pred_test_list)
+    
     accuracy = correct_cnt / total_cnt
-    print(f'Test Accuracy: {accuracy:.4f}')
+    print(f'\nTesting: Test Accuracy: {accuracy:.4f} Test F1 Score: {f1_score(y_test, y_pred_test):.4f} Test AUC: {roc_auc_score(y_test, y_pred_test):.4f}')
+    #joblib.dump(scaler, 'classifier_checkpoints/feed_forward_scaler.gz')
+    torch.save(model.state_dict(), 'classifier_checkpoints/feed_forward_testing.pt')
 
-    joblib.dump(scaler, 'classifier_checkpoints/feed_forward_scaler.gz')
-    torch.save(model.state_dict(), 'classifier_checkpoints/feed_forward.pt')
+    # Save the losses for plotting
+    import matplotlib.pyplot as plt
+    cm = confusion_matrix(y_test, y_pred_test, labels=[0, 1])
+    disp= ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["AI","Human"])
+    disp.plot()
+    plt.savefig('feed_forward_confusion_matrix.png')
+    plt.close()
+
+    plt.plot(train_losses, label='Train Loss')
+    plt.plot(val_losses, label='Validation Loss')
+    plt.legend()
+    plt.savefig('feed_forward_training_losses.png')
+    plt.close()
+
+    plt.plot(train_accuracies, label='Train Accuracy')
+    plt.plot(val_accuracies, label='Validation Accuracy')
+    plt.legend()
+    plt.savefig('feed_forward_training_accuracies.png')
+    plt.close()
+
+    # plot train and validation roc curves 
+    fpr_train, tpr_train, _ = roc_curve(y_train, y_pred_train)
+    fpr_val, tpr_val, _ = roc_curve(y_val, y_pred_val)
+    plt.plot(fpr_train, tpr_train, label='Train ROC curve')
+    plt.plot(fpr_val, tpr_val, label='Validation ROC curve')
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('ROC curve')
+    plt.legend()
+    plt.savefig('feed_forward_train_val_roc_curve.png')
+
+
+
+
+    # print the emebeddings of the  2nd value returned by the model for test instances 
+    embed=[]
+    for X_batch, y_batch in test_dataloader:
+        y_pred, embeddings = model(X_batch)
+        embed.append(embeddings.detach().cpu().numpy())
+
+    np.save('embeddings.npy', np.vstack(embed))
+
+    np.save('train_losses.npy', np.array(train_losses))
+    np.save('val_losses.npy', np.array(val_losses))
+
+    np.save('train_accuracies.npy', np.array(train_accuracies))
+    np.save('val_accuracies.npy', np.array(val_accuracies))
+
+    np.save('y_train.npy', y_train)
+    np.save('y_pred_train.npy', y_pred_train)
+
+    np.save('y_val.npy', y_val)
+    np.save('y_pred_val.npy', y_pred_val)
+    
+

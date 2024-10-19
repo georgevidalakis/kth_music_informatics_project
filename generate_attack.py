@@ -15,6 +15,10 @@ from feed_forward import FeedForward
 from embeddings_computing import load_audio_data_for_clap
 from embeddings_computing import quantize_array, load_clap_music_model
 
+from utils import seed_everything
+import warnings
+warnings.filterwarnings("ignore")
+
 
 class AudioWindowsDataIterator:
     def __init__(self, audio_data: torch.Tensor, window_size: int, hop_size: int) -> None:
@@ -123,8 +127,14 @@ def get_adversarial_audio_data(
     classifier.eval()
     criterion = nn.BCELoss()
     for iter_idx in range(max_iter):
+        #tmp = hash(tuple(adversarial_audio_data.detach().cpu().numpy().tolist()))
+        #print(tmp)
+        #print(adversarial_audio_data[:10],adversarial_audio_data[-10:] ,adversarial_audio_data.shape,adversarial_audio_data.dtype)
         audio_windows_embeddings = audio_windows_embeddings_extractor(adversarial_audio_data)
         audio_embedding = torch.mean(audio_windows_embeddings, dim=0)
+        #print(audio_embedding)
+        #exit()
+
         y_pred = classifier(audio_embedding)
         loss = criterion(y_pred, target_label_tensor)
         loss.backward()
@@ -140,6 +150,7 @@ def get_adversarial_audio_data(
 
 
 if __name__ == '__main__':
+    seed_everything(42)
     audio_data = load_audio_data_for_clap(audio_file_path='example.mp3')
     clap_model = load_clap_music_model(use_cuda=True)
     classifier = FeedForward(input_size=512).to('cuda:0')
@@ -150,11 +161,11 @@ if __name__ == '__main__':
         window_size=int(10 * CLAP_SR),
         hop_size=int(10 * CLAP_SR),
         max_batch_size=4,
-        min_snr=65.,
+        min_snr=55,
         clap_model=clap_model,
         classifier=classifier,
         learning_rate=0.001,
-        max_iter=1000,
+        max_iter=10,
     )
     # save adversarial audio as audio file
     sf.write('adversarial_example.wav', data=adversarial_audio_data, samplerate=CLAP_SR)
