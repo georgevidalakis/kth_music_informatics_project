@@ -34,6 +34,9 @@ def load_clap_music_model(use_cuda: bool) -> laion_clap.hook.CLAP_Module:
 
 def load_audio_data_for_clap(audio_file_path: str) -> np.ndarray:
     original_audio_data, original_sr = librosa.load(audio_file_path)
+    # print(original_audio_data[:10],original_audio_data[-10:] ,original_audio_data.shape,original_audio_data.dtype)
+    # np.save('original_audio_data.npy', original_audio_data)
+    # exit()
     return librosa.resample(original_audio_data, orig_sr=original_sr, target_sr=CLAP_SR, fix=False)
 
 

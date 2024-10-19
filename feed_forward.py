@@ -14,4 +14,4 @@ class FeedForward(nn.Module):
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, batch_embeddings: torch.Tensor, *args, **kwargs) -> torch.Tensor:
-        return self.sigmoid(self.linear(batch_embeddings))
+        return self.sigmoid(self.linear(batch_embeddings)) , self.linear[0](batch_embeddings)

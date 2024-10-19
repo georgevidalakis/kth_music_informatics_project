@@ -158,7 +158,7 @@ def get_adversarial_audio_data(
     for iter_idx in range(max_iter):
         audio_windows_embeddings = audio_windows_embeddings_extractor(adversarial_audio_data)
         audio_embedding = torch.mean(audio_windows_embeddings, dim=0)
-        y_pred = classifier(audio_embedding)
+        y_pred = classifier(audio_embedding)[0]
         loss = criterion(y_pred, target_label_tensor)
         target_pred_confidence = get_target_pred_confidence(y_pred, target_label)
         if init_target_pred_confidence is None:
