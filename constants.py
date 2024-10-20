@@ -13,6 +13,7 @@ class SplitStrategy(str, Enum):
 
 
 CLAP_SR = 48_000
+PARENT_DIR_PATH =  os.path.dirname(os.path.abspath(os.getcwd()))
 
 AUDIO_DIR_PATH = 'rolling_udio'
 AI_AUDIO_DIR_PATH = os.path.join(AUDIO_DIR_PATH, 'udio_500')
