@@ -2,5 +2,6 @@ __pycache__/
 .mypy_cache/
 rolling_udio/
 clap_embeddings/
+training_metrics/
 adversarial_audio/
 playground/

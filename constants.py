@@ -14,6 +14,8 @@ class SplitStrategy(str, Enum):
 
 CLAP_SR = 48_000
 
+TRAINING_METRICS_DIR_PATH = 'training_metrics'
+
 AUDIO_DIR_PATH = 'rolling_udio'
 AI_AUDIO_DIR_PATH = os.path.join(AUDIO_DIR_PATH, 'udio_500')
 HUMAN_AUDIO_DIR_PATH = os.path.join(AUDIO_DIR_PATH, 'rolling_500')

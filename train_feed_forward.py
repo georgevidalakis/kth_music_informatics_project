@@ -1,23 +1,21 @@
 import os
-import random
 from collections import Counter
 from typing import Tuple, List, Callable
 
-import numpy as np # type: ignore
+import numpy as np
 import tqdm  # type: ignore
-from sklearn.preprocessing import StandardScaler  # type: ignore
 from sklearn.model_selection import train_test_split  # type: ignore
-from sklearn.metrics import roc_auc_score, roc_curve, f1_score, ConfusionMatrixDisplay, confusion_matrix # type: ignore
+from sklearn.metrics import roc_auc_score, roc_curve, f1_score, ConfusionMatrixDisplay, confusion_matrix  # type: ignore
 import torch
 from torch.utils.data import TensorDataset, DataLoader
 from feed_forward import FeedForward
 import torch.nn as nn
-import joblib  # type: ignore
 
 from constants import (
-    AI_EMBEDDINGS_DIR_PATH, HUMAN_EMBEDDINGS_DIR_PATH, SPLIT_STRATEGY, SplitStrategy, Label, NUM_FEED_FORWARD_EPOCHS
+    AI_EMBEDDINGS_DIR_PATH, HUMAN_EMBEDDINGS_DIR_PATH, SPLIT_STRATEGY, SplitStrategy, Label, NUM_FEED_FORWARD_EPOCHS, TRAINING_METRICS_DIR_PATH
 )
 from utils import seed_everything
+
 
 def load_audio_embeddings(audio_embeddings_file_path: str) -> np.ndarray:
     return np.load(audio_embeddings_file_path)
@@ -73,9 +71,8 @@ def train_test_split_authors(authors: List[str], test_size: int) -> Tuple[List[s
 
 
 if __name__ == '__main__':
-    # Fixing seeds for determinsim and reproducibility
     seed_everything(42)
-    
+
     audio_embedding_aggregation_func = get_first_embedding
 
     X_ai, _ = get_X(AI_EMBEDDINGS_DIR_PATH, audio_embedding_aggregation_func)
@@ -137,12 +134,6 @@ if __name__ == '__main__':
     else:
         raise RuntimeError(f'Unexpected split strategy: {SPLIT_STRATEGY}')
 
-    #scaler = StandardScaler()
-    #X_train = scaler.fit_transform(X_train)
-    #X_val = scaler.transform(X_val)
-    #X_adv_val = scaler.transform(X_adv_val)
-    #X_test = scaler.transform(X_test)
-
     train_dataset = TensorDataset(torch.from_numpy(X_train), torch.tensor(y_train, dtype=torch.float).view(-1, 1))
     val_dataset = TensorDataset(torch.from_numpy(X_val), torch.tensor(y_val, dtype=torch.float).view(-1, 1))
     val_adv_val_dataset = TensorDataset(torch.from_numpy(X_adv_val), torch.tensor(y_adv_val, dtype=torch.float).view(-1, 1))
@@ -194,11 +185,6 @@ if __name__ == '__main__':
         y_train = np.array(y_train_list)
         y_pred_train = np.array(y_pred_train_list)
 
-        #print(f'Test Accuracy: {accuracy:.4f} Test AUC: {roc_auc_score(y_test, y_pred_test):.4f}')
-        #print(f'Train F1 Score: {f1_score(y_test, y_pred_test):.4f}')
-        #print(f'Epoch: {epoch},Validation Accuracy: {train_accuracy:.4f}')
-
-
         epoch_val_loss = 0
         y_val_list = []
         y_pred_val_list = []
@@ -216,7 +202,6 @@ if __name__ == '__main__':
 
         y_val = np.array(y_val_list)
         y_pred_val = np.array(y_pred_val_list)
-        #val_accuracies.append(epoch_tra_loss / len(train_dataloader))
         val_losses.append(epoch_val_loss / len(val_dataloader))
 
         val_accuracy = correct_cnt / total_cnt
@@ -239,30 +224,28 @@ if __name__ == '__main__':
 
     y_test = np.array(y_test_list)
     y_pred_test = np.array(y_pred_test_list)
-    
+
     accuracy = correct_cnt / total_cnt
     print(f'\nTesting: Test Accuracy: {accuracy:.4f} Test F1 Score: {f1_score(y_test, y_pred_test):.4f} Test AUC: {roc_auc_score(y_test, y_pred_test):.4f}')
-    #joblib.dump(scaler, 'classifier_checkpoints/feed_forward_scaler.gz')
-    torch.save(model.state_dict(), 'classifier_checkpoints/feed_forward_testing.pt')
 
     # Save the losses for plotting
     import matplotlib.pyplot as plt
     cm = confusion_matrix(y_test, y_pred_test, labels=[0, 1])
-    disp= ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["AI","Human"])
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['AI', 'Human'])
     disp.plot()
-    plt.savefig('feed_forward_confusion_matrix.png')
+    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'feed_forward_confusion_matrix.png'))
     plt.close()
 
     plt.plot(train_losses, label='Train Loss')
     plt.plot(val_losses, label='Validation Loss')
     plt.legend()
-    plt.savefig('feed_forward_training_losses.png')
+    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'feed_forward_training_losses.png'))
     plt.close()
 
     plt.plot(train_accuracies, label='Train Accuracy')
     plt.plot(val_accuracies, label='Validation Accuracy')
     plt.legend()
-    plt.savefig('feed_forward_training_accuracies.png')
+    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'feed_forward_training_accuracies.png'))
     plt.close()
 
     # plot train and validation roc curves 
@@ -274,29 +257,25 @@ if __name__ == '__main__':
     plt.ylabel('True Positive Rate')
     plt.title('ROC curve')
     plt.legend()
-    plt.savefig('feed_forward_train_val_roc_curve.png')
+    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'feed_forward_train_val_roc_curve.png'))
+    plt.close()
 
-
-
-
-    # print the emebeddings of the  2nd value returned by the model for test instances 
-    embed=[]
+    # print the emebeddings of the  2nd value returned by the model for test instances
+    embed = []
     for X_batch, y_batch in test_dataloader:
         y_pred, embeddings = model(X_batch)
         embed.append(embeddings.detach().cpu().numpy())
 
-    np.save('embeddings.npy', np.vstack(embed))
+    np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'embeddings.npy'), np.vstack(embed))
 
-    np.save('train_losses.npy', np.array(train_losses))
-    np.save('val_losses.npy', np.array(val_losses))
+    np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'train_losses.npy'), np.array(train_losses))
+    np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'val_losses.npy'), np.array(val_losses))
 
-    np.save('train_accuracies.npy', np.array(train_accuracies))
-    np.save('val_accuracies.npy', np.array(val_accuracies))
+    np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'train_accuracies.npy'), np.array(train_accuracies))
+    np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'val_accuracies.npy'), np.array(val_accuracies))
 
-    np.save('y_train.npy', y_train)
-    np.save('y_pred_train.npy', y_pred_train)
+    np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'y_train.npy'), y_train)
+    np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'y_pred_train.npy'), y_pred_train)
 
-    np.save('y_val.npy', y_val)
-    np.save('y_pred_val.npy', y_pred_val)
-    
-
+    np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'y_val.npy'), y_val)
+    np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'y_pred_val.npy'), y_pred_val)
