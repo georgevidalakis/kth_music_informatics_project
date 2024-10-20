@@ -1,23 +1,23 @@
 [
     {
         "audio_file_path": "rolling_udio\\udio_500\\0084af96-0ab1-4a48-89a2-752536e6fd44.mp3",
-        "init_target_pred_confidence": 0.010553455911576748,
-        "max_target_pred_confidence": 0.9135538935661316,
-        "num_iter": 11,
-        "argmax_snr": 63.754409842566
+        "init_target_pred_confidence": 4.169825873479027e-10,
+        "max_target_pred_confidence": 0.9426491260528564,
+        "num_iter": 25,
+        "argmax_snr": 62.40927790747605
     },
     {
         "audio_file_path": "rolling_udio\\udio_500\\010aeac5-c0ef-4061-a6d6-58f9484b79a2.mp3",
-        "init_target_pred_confidence": 0.006346710957586765,
-        "max_target_pred_confidence": 0.9429931640625,
-        "num_iter": 8,
-        "argmax_snr": 68.65236926168609
+        "init_target_pred_confidence": 1.948671446427852e-09,
+        "max_target_pred_confidence": 0.982308030128479,
+        "num_iter": 13,
+        "argmax_snr": 61.6135005490872
     },
     {
         "audio_file_path": "rolling_udio\\udio_500\\02bd4054-c093-44df-8ca8-811f1ff891e2.mp3",
-        "init_target_pred_confidence": 0.021456560119986534,
-        "max_target_pred_confidence": 0.9228513240814209,
-        "num_iter": 7,
-        "argmax_snr": 78.45711429160163
+        "init_target_pred_confidence": 1.6173210326542176e-07,
+        "max_target_pred_confidence": 0.9425790905952454,
+        "num_iter": 13,
+        "argmax_snr": 72.03301337774803
     }
 ]

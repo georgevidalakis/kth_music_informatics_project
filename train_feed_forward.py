@@ -145,6 +145,7 @@ if __name__ == '__main__':
     test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
     model = FeedForward(input_size=X_train.shape[1])
+    model.fit_scaler(torch.from_numpy(X_train))
     criterion = nn.BCELoss()
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
@@ -159,7 +160,7 @@ if __name__ == '__main__':
         epoch_train_loss = 0
         for X_batch, y_batch in train_dataloader:
             optimizer.zero_grad()
-            y_pred ,_= model(X_batch)
+            y_pred, _= model(X_batch)
             loss = criterion(y_pred, y_batch)
             loss.backward()
             optimizer.step()
@@ -227,6 +228,7 @@ if __name__ == '__main__':
 
     accuracy = correct_cnt / total_cnt
     print(f'\nTesting: Test Accuracy: {accuracy:.4f} Test F1 Score: {f1_score(y_test, y_pred_test):.4f} Test AUC: {roc_auc_score(y_test, y_pred_test):.4f}')
+    torch.save(model.state_dict(), 'classifier_checkpoints/feed_forward.pt')
 
     # Save the losses for plotting
     import matplotlib.pyplot as plt

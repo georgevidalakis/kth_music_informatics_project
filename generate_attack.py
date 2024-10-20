@@ -154,27 +154,26 @@ def get_adversarial_audio_data(
     max_target_pred_confidence = float('-inf')
     argmax_adversarial_audio_data = None
     argmax_snr = None
-    last_snr = 0.
+    snr = float('inf')
     for iter_idx in range(max_iter):
         audio_windows_embeddings = audio_windows_embeddings_extractor(adversarial_audio_data)
         audio_embedding = torch.mean(audio_windows_embeddings, dim=0)
         y_pred = classifier(audio_embedding)[0]
         loss = criterion(y_pred, target_label_tensor)
         target_pred_confidence = get_target_pred_confidence(y_pred, target_label)
+        print(f'Iter {iter_idx}, target_pred_confidence {target_pred_confidence:.5f}, loss {loss:.5f}, snr {snr:.5f}')
         if init_target_pred_confidence is None:
             init_target_pred_confidence = target_pred_confidence
         if target_pred_confidence > max_target_pred_confidence:
             max_target_pred_confidence = target_pred_confidence
             argmax_adversarial_audio_data = adversarial_audio_data.detach().cpu().numpy()
-            argmax_snr = last_snr
+            argmax_snr = snr
             if target_pred_confidence >= required_target_pred_confidence:
                 break
         loss.backward()
         assert adversarial_audio_data.grad is not None
         adversarial_audio_data = adversarial_audio_data.detach() - learning_rate * adversarial_audio_data.grad
         adversarial_audio_data, snr = limit_snr(pure_audio_data, adversarial_audio_data.detach().cpu(), min_snr=min_snr)
-        last_snr = snr
-        # print(f'Iter {iter_idx}, target_pred_confidence {target_pred_confidence:.5f}, loss {loss:.5f}, snr {snr:.5f}')
         adversarial_audio_data.requires_grad = True
         clap_model.zero_grad()
         classifier.zero_grad()
@@ -195,7 +194,7 @@ if __name__ == '__main__':
     seed_everything(42)
     clap_model = load_clap_music_model(use_cuda=True)
     classifier = FeedForward(input_size=512).to('cuda:0')
-    classifier.load_state_dict(torch.load('classifier_checkpoints/feed_forward.pt'))
+    classifier.load_state_dict(torch.load('classifier_checkpoints/feed_forward.pt', weights_only=True))
     adversarial_results: List[AdversarialResult] = []
     for audio_file_name in os.listdir(AI_AUDIO_DIR_PATH)[:3]:
         print(f'Processing {audio_file_name}')
@@ -209,8 +208,8 @@ if __name__ == '__main__':
             min_snr=60.,
             clap_model=clap_model,
             classifier=classifier,
-            learning_rate=0.0001,
-            max_iter=20,
+            learning_rate=0.00005,
+            max_iter=50,
             required_target_pred_confidence=0.9,
         )
         adversarial_results.append(adversarial_result)
