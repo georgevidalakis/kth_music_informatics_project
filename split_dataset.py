@@ -6,7 +6,9 @@ from typing import Tuple, List, Dict
 import numpy as np
 
 from utils import seed_everything
-from constants import Label, SplitStrategy, SPLIT_STRATEGY, AI_AUDIO_DIR_PATH, HUMAN_AUDIO_DIR_PATH
+from constants import (
+    Label, SplitStrategy, SPLIT_STRATEGY, AI_AUDIO_DIR_PATH, HUMAN_AUDIO_DIR_PATH, DATASET_SPLITS_FILE_PATH
+)
 
 
 def check_splits_sizes(names_values: Dict[str, int], splits_sizes: List[int]) -> None:
@@ -157,34 +159,34 @@ def main() -> None:
     dataset_split = {
         'train': [
             {
-                'audio_files_path': audio_files_path,
+                'audio_file_path': audio_files_path,
                 'label': label,
             }
             for audio_files_path, label in zip(train_audio_files_paths, train_labels)
         ],
         'val': [
             {
-                'audio_files_path': audio_files_path,
+                'audio_file_path': audio_files_path,
                 'label': label,
             }
             for audio_files_path, label in zip(val_audio_files_paths, val_labels)
         ],
         'adv_val': [
             {
-                'audio_files_path': audio_files_path,
+                'audio_file_path': audio_files_path,
                 'label': label,
             }
             for audio_files_path, label in zip(adv_val_audio_files_paths, adv_val_labels)
         ],
         'test': [
             {
-                'audio_files_path': audio_files_path,
+                'audio_file_path': audio_files_path,
                 'label': label,
             }
             for audio_files_path, label in zip(test_audio_files_paths, test_labels)
         ],
     }
-    with open('dataset_splits.json', 'w') as f:
+    with open(DATASET_SPLITS_FILE_PATH, 'w') as f:
         json.dump(dataset_split, f, indent=4)
 
 

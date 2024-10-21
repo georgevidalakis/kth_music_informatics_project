@@ -14,6 +14,8 @@ class SplitStrategy(str, Enum):
 
 CLAP_SR = 48_000
 
+DATASET_SPLITS_FILE_PATH = 'dataset_splits.json'
+
 TRAINING_METRICS_DIR_PATH = 'training_metrics'
 
 AUDIO_DIR_PATH = 'rolling_udio'
@@ -29,3 +31,5 @@ ADVERSARIAL_AUDIO_DIR_PATH = 'adversarial_audio'
 SPLIT_STRATEGY = SplitStrategy.AUTHORS_CONSIDERED
 
 NUM_MLP_EPOCHS = 20
+
+CLAP_EMBEDDING_SIZE = 512
