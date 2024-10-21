@@ -13,6 +13,7 @@ class SplitStrategy(str, Enum):
 
 
 CLAP_SR = 48_000
+PARENT_DIR_PATH =  os.path.dirname(os.path.abspath(os.getcwd()))
 
 DATASET_SPLITS_FILE_PATH = 'dataset_splits.json'
 
