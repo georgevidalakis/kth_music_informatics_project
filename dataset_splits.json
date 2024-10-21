@@ -1,0 +1,4010 @@
+{
+    "train": [
+        {
+            "audio_files_path": "136 - Elton John - Your Song.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "235 - Ray Charles - I Got A Woman.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "12 - Sam Cooke - A Change Is Gonna Come.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "5624ca25-e59a-4de9-acaa-fa5ceae65781.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "865fe22a-11a6-4b93-bf45-6ec733fb06df.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "1e55bfbd-4825-466e-840d-918896a0ff34.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "b44c4a37-fc18-45cf-93dd-1f0c5305ac93.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ae73352e-7b23-491d-9aa9-3567b0185091.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "38d9057a-467d-46cb-b03d-0d4457d54228.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "193 - The Drifters - There Goes My Baby.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "0a3eb674-e888-4957-be21-bdb2e6e2479c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "385 - Crosby Stills Nash And Young - Ohio.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "463 - The Beatles - Rain.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "421 - Billy Joel - Piano Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a436af3c-a5fa-48b2-a323-2c05fc94b349.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "160 - Public Enemy - Bring The Noise.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "bbc9abc1-8ec1-493e-99c4-571f07354c68.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "336 - Aerosmith - Walk This Way.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "366 - The Bee Gees - How Deep Is Your Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "270 - George Jones - He Stopped Loving Her Today.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "1d0b50f0-6ff3-4de5-abf1-a1a344d01236.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "434216d2-ecea-4a7a-b0b2-b5e360a7862b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "220 - Left Banke - Walk Away Renee.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b2214ba5-3e04-4273-b6dd-c2aa1749b377.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "424 - The Rolling Stones - Tumbling Dice.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "394 - Elvis Presley - Can't Help Falling In Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "993b2353-fa83-46f5-8a89-b7ce6da20294.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c37cc01e-88d8-4c47-beb4-4ecfaf97aee1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "294 - Led Zeppelin - Black Dog.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "7a7af04e-31b4-4c99-915f-8cb41340b46e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "451fdfb6-a1b4-4749-a287-c74268ebbec6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ab585707-a51d-4061-87ef-2191674c62d9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "141 - The Everly Brothers - All I Have To Do Is Dream.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "52 - Prince - When Doves Cry.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "53830600-dcca-4ce9-9964-480dea309949.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "317 - Jimmy Cliff - Many Rivers To Cross.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "167 - Marvin Gaye - Lets Get It On.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "9e590903-4d11-4877-a45c-b3fef67f5070.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "0af125e0-c2e0-48e6-98e9-77fd4447c372.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "7db12fb8-d06e-48ea-9199-1cc98e7c50ed.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "104 - Stevie Wonder - Living For The City.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "3fcc4153-bf65-468d-bf50-4210a27ccc27.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "413 - Little Richard - The Girl Can't Help It.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "305 - James Brown - Say It Loud (I'm Black And I'm Proud).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "332 - Bob Dylan - Subterranean Homesick Blues.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "290 - Eminem - Stan.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "303 - The Rolling Stones - Ruby Tuesday.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "42 - The Kinks - Waterloo Sunset.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "494 - The Eagles - Desperado.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "371 - The Who - I Can't Explain.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ff547311-bf37-4c88-b04e-7cc7804ce2bc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "258 - The Who - I Can See For Miles.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "44ac2cf8-bd7c-4a72-8998-6679736396c1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "02bd4054-c093-44df-8ca8-811f1ff891e2.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "138 - Sly & The Family Stone - Family Affair.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "465 - Cheap Trick - Surrender.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "434 - Wilson Pickett - Mustang Sally.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a046856b-ca39-4c25-951b-b595d332759a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "268 - U2 - Sunday Bloody Sunday.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "4da18fc4-914b-45f4-a2d4-9fa2fffd0730.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "68d6bed6-f61b-4556-af63-fa0205e55b28.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "23a73f87-0dde-4aaf-87c9-5bf89acd58ed.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "86 - Bruce Springsteen - Thunder Road.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "21 - Bruce Springsteen - Born To Run.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "cbd91035-6721-47bc-82b1-fb1f145e60f8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "4aa5fb89-4d52-488d-9bcc-a02e61c1f221.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "275 - Bruce Springsteen - Born In The U.S.A.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "311 - The Everly Brothers - Wake Up Little Susie.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "8dd1a201-55d5-40d0-b483-a8671cfc0b6d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "423 - Elvis Presley - Blue Suede Shoes.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "597cd7b0-6736-4034-8486-2aa97456987b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "65b1111a-e7dd-4cdf-acde-fe9ed272689f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "82 - The Kinks - You Really Got Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ba38dcba-817c-47de-b080-52e775793822.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "75 - Led Zeppelin - Whole Lotta Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "441 - The Dell-Vikings - Come Go With Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "480 - Van Morrison - Into The Mystic.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "56 - Little Richard - Long Tall Sally.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "bed42572-d530-4522-954f-f24e1908f533.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "958bdfb9-618e-43a8-93a9-cfc881861569.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "d1c23056-efa7-4928-b746-b27cdf4aa6ae.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "69 - Roy Orbison - Crying.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "102 - Gene Vincent - Be Bop A Lula.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "21c9bcd6-bcfc-45c2-9ff3-34b434701448.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "b9e5d3fe-df84-47b4-9a84-5b2da41a799a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "389 - The Temptations - Just My Imagination.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "109 - Van Morrison - Brown Eyed Girl.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "108 - Prince - Little Red Corvette.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ac22e7d0-ee76-4e56-a1b2-c5fc6e527b08.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "bf6193e3-35bc-4d1f-ac13-0a07f50f44cf.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ed29d0c0-b807-42ff-a234-46457ae91fff.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ac03b14a-ff6f-46a2-a991-2f5730bedd91.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "5b578b27-d563-41cc-9549-64e3ef4440a0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "299 - Prince - Sign 'o' The Times.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "11 - The Who - My Generation.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "7d9dfe08-4ab0-457c-ad06-d4c7b5edd664.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "277 - David Bowie - Ziggy Stardust.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "709c236a-4ab7-4c57-927f-2091c36cad37.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ea0700c1-822b-41cb-8c74-3176e3687ae6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "427 - U2 - New Year's Day.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "364 - Bob Dylan - Highway 61 Revisited.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "069a4df7-3c0d-41b0-a5f2-b30e2be15378.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "203 - Bob Dylan - Positively 4Th Street.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b02b5972-e4f8-4681-b48f-174b219f4349.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "18 - Chuck Berry - Maybellene.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "7499e10b-55d7-4dd5-8520-b4ad3ecc1b57.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "a2ae07bb-afba-4544-a963-10f3dfc834c8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "464 - The Four Tops - Standing In The Shadows Of Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "8e1712f4-508b-4538-8457-16ee31e84abe.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "fb6ea0b2-7d63-4b38-ab94-f129f69f6452.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "07 - Chuck Berry - Johnny B. Goode.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c80d2d8f-cbc0-4980-b00b-29a8b463a5b7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "8c13f974-948e-4583-bf5c-fc31ec944021.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "773e45c9-177d-4e4c-9fc7-72bcdb4bced7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "166 - Eminem - Lose Yourself.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "19 - Elvis Presley - Hound Dog.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "101 - The Jimi Hendrix Experience - Voodoo Child (Slight Return).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "211 - The Beach Boys - Caroline, No.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "41 - The Band - The Weight.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "31 - Led Zeppelin - Stairway To Heaven.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a1079bf0-d149-42d0-9dfa-ee398d1b32a7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "6bf35090-58b0-4be6-8cfd-b38a6159c2fd.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "cfc70dda-4671-40cc-8bc7-9a7ebaf86ccd.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "60 - Al Green - Let's Stay Together.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "697af8d1-157a-4f66-8036-f1ae38b663af.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "416 - Don Henley - The Boys Of Summer.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ce87e007-0a14-4a8c-b9bf-68dfd6e40fb1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "271222aa-7501-480a-8912-d63b17d2d6e8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "259ab6ac-2895-4776-bcb7-d4927e195506.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "3f37eae3-5fe5-4b83-ad3b-a1e37f05db29.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "131 - U2 - With Or Without You.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "04d02a6d-e748-48d0-aee7-a1527dd2fcc7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "252 - The Drifters - Money Honey.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "259 - Jeff Buckley - Hallelujah.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "57aa1f51-e691-4592-9096-743f5162ed91.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "96580a4c-bfd4-4dcb-b458-dc33811c56d5.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2836f9a8-1519-47af-8410-66708bcc37c4.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "255 - Blondie - Heart Of Glass.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b8f0de89-ec4d-4198-9976-dc888440e2c6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "bfbb235c-843b-427c-8eeb-45c8a1a08dd4.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "443 - Bob Marley - I Shot The Sheriff.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "478 - Jefferson Airplane - White Rabbit.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "2f033641-e11f-419c-8d43-3eeb7ead034f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "247 - Sly & The Family Stone - Hot Fun In The Summertime.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "26cf4212-2950-453b-abe3-7a81097c1024.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "87add39a-bfb1-478b-b627-bc10cce79949.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "5793a80d-b25b-4aeb-9c66-642ac49401bd.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "372 - Television - Marquee Moon.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c9d6359d-eddf-4fd7-96a0-9b9d6128fcb5.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "591b8b39-f4bc-4068-8dc9-5c87ff20399c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "04 - Marvin Gaye - Whats Going On.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "249 - Aretha Franklin - Chain Of Fools.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "216 - The Lovin' Spoonful - Belive In Magic.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c3c9dd41-be91-4785-b48e-06d14be43a6f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "206 - The Four Tops - Reach Out I'll Be There.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "12e9cf7f-5fa9-4d13-a737-424c963ba8a1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "212 - Prince - 1999.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "2a4c7a75-742d-43a7-b9e2-8335bb3ee9df.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "274 - Jefferson Airplane - Somebody To Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "7fa9a1c5-9157-4db6-8500-a1408eab47d3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "69ccfe75-c1c8-4fb7-8d35-1f27bca2982f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "237 - Afrika Bambaataa & The Soul Sonic Force - Planet Rock.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "761e1045-a4c7-4bd0-a5ed-30078f4f5c6e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "d096a04a-0d9e-4f61-87bd-451b54833cbe.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "b8138fbd-1bbe-437e-9385-3fac468380f8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "134 - Wilson Pickett - In The Midnight Hour.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "fdc33287-6d5b-4d00-ba9d-caf99152b8fc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "0564bf6f-e96a-41e7-9d93-7309fea3a196.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "1ab9b9b6-58a8-4e7e-bb2f-fc682383faa2.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "6616cbb7-dc2f-4354-b6e4-acde4dbfb8fd.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "402 - Sly & The Family Stone - Thank You (Falettinme Be Mice Elf Again).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "2eb4ff88-91e0-40a5-9dd9-7e6c790a4770.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "919aa5cd-7d34-443c-8299-b4488d2d6dca.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "117 - Al Green - Take Me To The River.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "112 - Elvis Presley - That's All Right.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "450 - Glen Campbell - By The Time I Get To Phoenix.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "107 - Buddy Holly And The Crickets - Not Fade Away.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "204 - Otis Redding - Try A Little Tenderness.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b8a84bf2-79f1-4b2e-be60-72f391db10ce.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "f049425a-c157-46aa-8f8e-dc2e790879d8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "e4e09afc-d0fe-479f-a4c9-bacb46d233fd.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "9b8d7881-7347-4db5-a2d2-2d4b52b04a3d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "459 - Muddy Waters - Rollin' Stone.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "33a518ff-95ea-4846-918f-0414e8ab99f1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c5538348-2db9-41e8-8dd5-d9407dcb321a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "178 - Big Star - September Gurls.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "401 - The Shirelles - Tonight's The Night.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "263 - The Crystals - He's A Rebel.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ac617e7d-845d-4da8-8a3f-a79ae8f27a0d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "296 - Bob Marley - Get Up Stand Up.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "445 - Nirvana - Come As You Are.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "457 - The Ramones - Sheena Is A Punk Rocker.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "432 - Gladys Knight And The Pips - Midnight Train To Georgia.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "14b8e4fc-de7e-42e2-93b2-a0afacaceeb3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "158 - Bill Haley And His Comets - Rock Around The Clock.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "5de9265a-9ee9-442c-82a6-f0cc13b6d1f3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "cb1a012f-a1da-4fa3-af0c-a3cd000aebf1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "289 - The Beatles - Can't Buy Me Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "7dacbc16-b18d-4222-a8bd-127c49072661.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "cd728194-9725-4db9-925c-47932325c491.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "16 - The Beatles - I Want To Hold Your Hand.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "490 - The Rolling Stones - Brown Sugar.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e5de7162-5849-4753-9f05-269fab6d7f5a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "4a91c3d1-a882-40b2-b459-9de99b43326c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "33b95840-3072-4d0f-8166-ce342c66573c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "272 - Chuck Berry - Sweet Little Sixteen.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "8035e31e-25b9-487f-9d6d-436624578126.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ea1083a7-e0cb-43de-8870-19804d186efe.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "143 - Prince - Purple Rain.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e5645a86-a8ec-4fdc-9d7f-251d90c708ab.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c36f564b-c258-462c-ba8c-6d307ff01aca.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c2133212-b6a4-4e53-95a9-ec42c4ec08f6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "936ab708-f562-4e8e-af0e-8f67751365c0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "408 - Aerosmith - Sweet Emotion.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ab589fb8-7162-4e97-b46d-acc69c89b6da.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2748adce-2a37-4565-a174-1f79b4b5293d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "197 - Elvis Presley - Don't Be Cruel.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "362 - The Beatles - All You Need Is Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "173 - The Sex Pistols - God Save The Queen.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e40283f0-d57a-41a4-83d5-554fd7471a55.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "a848612b-9188-4752-a4a6-a907c01fea51.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "afb9ce63-4ef1-4583-934a-4361f1ab7d5c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "461 - Prince - Kiss.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "48 - The Jimi Hendrix Experience - All Along The Watchtower.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "488 - Fleetwood Mac - Rhiannon.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "3fab6104-3b62-4e1d-854c-83085ae2d1f8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "496 - The Rolling Stones - Miss You.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "93 - U2 - I Still Haven't Found What I'm Looking For.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "350 - Little Eva - The Loco Motion.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "484 - Joan Jett - I Love Rock 'n Roll.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ceda2d73-2556-4c94-88d1-4229054afd27.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "44 - Ray Charles - Georgia On My Mind.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "242 - Elton John - Rocket Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "d8eb7c67-1a5a-4bb8-b6e2-2019eb8e83d6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "142 - James Brown - Please Please Please.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "476a8bd2-ac8e-4ded-ad87-479943cadc20.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "186 - Aretha Franklin - I Never Loved A Man (The Way I Love You).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "1689a03d-96f2-40a8-821a-05c8371dfc9e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "222 - Roy Orbison - Oh Pretty Woman.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ad273424-ac2b-449b-b189-8a2c68da233a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "38 - The Rolling Stones - Gimme Shelter.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "85c8c0d7-359a-4000-b7b7-d4080be1eb59.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "0503bf90-b021-4805-ada0-e089495289ea.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "7ebf152d-8e1b-4c4c-a5a8-f3c1b3fdc456.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "49008c55-2e01-4954-a6f7-e2e311770762.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "67047fed-2b3b-40ab-842f-d45795d76f33.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2b5fd183-46c7-4e76-98e5-1137a0ab576f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "100 - The Rolling Stones - You Can't Always Get What You Want.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "168 - The Temptations - Papa Was A Rollin' Stone.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "cf58e9b1-f6c7-4d22-b68a-8caf32837616.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "4b2fbdd7-e35e-4130-90c0-7de7eb893431.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "172 - Aerosmith - Dream On.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "225417ae-e3c4-43c2-b101-db1092cc2883.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "831d9871-64d7-4761-903f-83940003a709.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ea1f6c13-20a4-4046-8f58-0c0c42d222a9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "f3f942be-d2cc-4109-8fdd-9c2ffdb032dc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2f89346b-2c47-4e87-810e-5ae92eb21593.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c64d3d69-7b5b-4ecd-98b9-e3060edb406e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "22 - The Ronettes - Be My Baby.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "03a18178-7e90-4549-85a3-00bdcb0dd1a9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "340 - The Who - Baba O'riley.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "25 - The Beach Boys - God Only Knows.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "122 - The Animals - House Of The Rising Sun.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "393 - The Lovin' Spoonful - Summer In The City.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "288 - Barrett Strong - Money (That's What I Want).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "334168d7-4ad5-47da-8a1c-1ba1e95394ae.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "9655a82c-81c6-4234-b6c7-3df81e8b7507.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "93d4be9f-1375-4c77-80a9-4ac2b49900f7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "452 - Sam Cooke - Cupid.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "261 - Stevie Wonder - Higher Ground.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "378 - U2 - Pride (In The Name Of Love).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "273 - The Beatles - Something.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "404 - Bob Dylan - Visions Of Johanna.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "374 - Chuck Berry - Brown Eyed Handsome Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "3c7a34aa-a08c-4995-8c6e-04216a2a7f17.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "e8cbdb60-5aa5-498d-8771-ce51bf75d394.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "128 - Chuck Berry - Rock And Roll Music.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "907eff43-da64-4ea7-b9af-8e06f624ce80.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "05 - Aretha Franklin - Respect.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "77be7652-06c4-4c22-ac3c-495640c7785e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "52b57c81-8ddc-47b2-abb8-3b7eb000937f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "43 - Little Richard - Tutti Frutti.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "7619fd45-ce73-4207-ad97-bce11e37c492.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "430 - The Clash - White Man In Hammersmith Palais.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "373 - Sam Cooke - Wonderful World.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "149 - The Everly Brothers - Cathy's Clown.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "435 - The Rolling Stones - Beast Of Burden.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "84ec8d74-d015-4d0a-b6f3-8e31380d87bb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "1f500a31-f7d9-47c4-9c04-086cb265b890.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "153 - The Beatles - A Hard Days Night.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e4502f8a-ba37-44e4-a03f-a7a36e214b04.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "0b5ef1cb-3b67-408b-8de8-2691b3cf64db.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "e6922409-9c2f-4136-b591-bb3ed41220cb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "406 - R Kelly - I Believe I Can Fly.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "cf25881b-1507-49f2-a8c6-4289a5f4bbec.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "420 - The Isley Brothers - It's Your Thing.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ca765ede-668d-4e94-bf8f-f9d990e73a3b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "304 - The Beatles - With A Little Help From My Friends.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ce275e9f-3157-466d-a187-7bb13f4afd72.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "81fee1e5-fd45-48eb-96cb-7acf94f9cd5e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "1c79281d-5afd-43c3-8bd4-92efb64306eb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "265 - Archie Bell & The Drells - Tighten Up.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "db7b5d14-bb81-4065-a643-6a178b923e74.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "210 - Question Mark & The Mysterians - 96 Tears.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "55b20809-82a7-4360-852b-ce60ffc14a3d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "98 - Al Green - Love And Happiness.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "73 - Eddie Cochran - Summertime Blues.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "6c8e8a47-73f9-40ee-9ed9-8f417ea7fde7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "110 - Otis Redding - I've Been Loving You Too Long.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "14 - Bob Dylan - Blowin' In The Wind.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "231 - Marvin Gaye - Sexual Healing.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "80 - Marvin Gaye - I Heard It Through The Grapevine.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a5c1d67c-ec71-425b-8dfc-456759f3269f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "6f69e164-d458-462e-8431-a1c2aaf116d0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "156 - Simon & Garfunkel - The Sounds Of Silence.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "69cd7904-1018-4555-9f8e-d01dd69b7459.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "152 - Jimi Hendrix - Foxey Lady.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "0b23082b-2fed-4b0b-9b5f-7ffb979ffe13.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "0455a29b-c302-42d0-b912-23ff43e3614b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "370 - Jimi Hendrix - The Wind Cries Mary.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "83 - The Beatles - Norwegian Wood (This Bird Has Flown).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "103 - Donna Summer - Hot Stuff.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "13f455af-98a9-4a5f-9732-4d825dff8a2f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "45b5e210-3659-4726-975a-b201487962e9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "10 - Ray Charles - What'd I Say Parts I & Ii.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "67 - Elvis Presley - Jailhouse Rock.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "5f9fd241-d2bb-4979-9e2f-98daa34d8526.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "45 - Elvis Presley - Heartbreak Hotel.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "94 - Little Richard - Good Golly Miss Molly.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "2b46a18f-bde1-4f74-883d-47a9c56302a5.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "7e8b81a1-97f1-4b4f-a539-936e5d84df68.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "140 - Led Zeppelin - Kashmir.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "09 - Nirvana - Smells Like Teen Spirit.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "352c2104-0325-42bc-b189-d956bc5cb0ab.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "202 - The Beatles - Come Together.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "2458ce1c-0493-4411-8567-8981c3ce5176.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "232 - Roy Orbison - Only The Lonely.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "321be1b2-9310-4f76-abe6-84236c67a028.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "324 - The Supremes - Baby Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c0122766-0087-45fe-9a3e-50b3c2a85cbe.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "266 - The Ronettes - Walking In The Rain.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "245 - The Band - The Night They Drove Old Dixie Down.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "190 - Bob Dylan - Knockin On Heavens Door.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "4e34f73e-104d-4937-9df9-6932325fd291.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "8733b161-de66-494e-a7d0-7789469dd526.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "380 - Elton John - Goodbye Yellow Brick Road.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b248255c-d421-49f8-b0be-709304ad777c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "433 - Led Zeppelin - Ramble On.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "472 - The Supremes - Where Did Our Love Go.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "79dfc723-d0e6-4666-983e-98e5539ada06.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "418f0950-8988-46e2-a0a6-4117b85a3314.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "115 - Sam Cooke - You Send Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "6a728649-9bd7-420c-a37a-623b8da6e556.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "32ed88c4-0ddf-4f3f-ada7-4115afd1efca.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "88 - The Temptations - My Girl.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "185 - Bob Dylan - Desolation Row.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "113 - The Drifters - Up On The Roof.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "fc4d6eb8-1487-426f-ad5c-f0446a462216.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "352 - Elvis Presley - All Shook Up.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b4506fee-b93b-4d98-adfd-3b53ee6a9ca9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c0b6a118-12d7-4911-8728-19aebcea0725.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "e22dfd78-53d0-4044-b23b-3fe4bb8b2cf9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "9919d094-1e4d-4c96-b7e5-1cdd3f8038ad.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "230 - Bob Dylan - Just Like A Woman.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a957f601-d2ff-48da-8145-969998e18c02.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "5fbec6df-e434-41c2-899c-0f9412d9c53b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "207 - The Everly Brothers - Bye Bye Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c30cae95-f678-4a2d-916c-18e04d19c40e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "72 - James Brown - Papa's Got A Brand New Bag.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "390 - The Four Tops - Baby I Need Your Loving.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "335 - The Velvet Underground - Sweet Jane.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "334 - The Rolling Stones - Wild Horses.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b3bb3d12-02a1-4691-93ed-73d8e2150227.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "339 - The Supremes - You Keep Me Hangin' On.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "82a507f2-9aed-4ca9-8fac-d72796e9f9b0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2406ef91-f54e-4559-a318-c083359cb741.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "361 - The Clash - Complete Control.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "124 - The Rolling Stones - Jumping Jack Flash.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c79ae491-1171-4926-9359-7e6f55697bc4.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "46 - David Bowie - Heroes.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "0d833c5e-78e2-4323-8f1a-4416fbdb3aad.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "403 - Eddie Cochran - Cmon Everybody.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "448 - The Velvet Underground - Heroin.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "9ebc5dcb-a093-451a-8a2c-b74cfb9e8b7c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "454 - George Harrison - My Sweet Lord.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "325 - The Young Rascals - Good Lovin'.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "137 - The Beatles - Eleanor Rigby.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "7db171ff-b199-464c-8654-b3c0ab673772.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "01 - Bob Dylan - Like A Rolling Stone.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "4c5514b0-c97f-477b-8c39-a5801b9873b1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "422 - The Kinks - Lola.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "6dc95893-5ae2-40f2-94e7-9510ec727ece.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "3fe187aa-5ef6-46a4-b464-ba8ab8b6d892.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "119 - Fleetwood Mac - Go Your Own Way.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "97522e2c-9551-4792-8e3c-8f6d47cde4ea.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "326 - James Brown - Get Up (I Feel Like Being A) Sex Machine.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "396 - Big Star - Thirteen.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e2bdf34e-1e40-43ab-aa51-919f5b2c9574.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "20 - The Beatles - Let It Be.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "51 - Grandmaster Flash And The Furious Five - The Message.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "473 - Aretha Franklin - Do Right Woman, Do Right Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "f8693fed-db97-48d6-8ea5-ff0ecfcd1a96.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "83a122a1-e219-48f4-a7d2-ef03f1d19ef5.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "95dbb548-e016-4a0e-884e-8e612282a9c8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ed983ebd-e02a-4779-83be-f304301d107a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "37fed83b-1e33-4211-9dfa-3608f6b8150c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "176 - The Beach Boys - Don't Worry Baby.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "114 - The Crystals - Da Doo Ron Ron (When He Walked Me Home).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "298 - Blondie - One Way Or Another.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "7a68de3a-88be-4af7-9fa6-4fe31a4f057f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "4ce5fcbf-3111-4a0d-bb7d-1d16cf9e232a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "32f4fe5b-1826-4bd4-996b-fad446dd2349.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "293 - Al Green - Tired Of Being Alone.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "359 - Muddy Waters - Got My Mojo Working.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "36 - U2 - One.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "481 - David Bowie - Young Americans.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "095bffc3-cf6b-499e-b8c0-5305df013078.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "455 - Nirvana - All Apologies.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c447165e-860c-4aaf-975a-34b505b29c02.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "312 - Roy Orbison - In Dreams.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "281 - Stevie Wonder - You Are The Sunshine Of My Life.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "95a6c933-99ad-4f23-abbf-880d7626070c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "7f502e99-0ab0-4fbc-acdd-218ca1d2e6a0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "248 - The Sugar Hill Gang - Rapper's Delight.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "295 - The Rolling Stones - Street Fighting Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "493 - The Crystals - Then He Kissed Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "9d8ba0ca-27ab-4064-8964-f415eb54e2ba.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "39c81520-d1fc-4bca-9bab-c5f92ef478c7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "397 - Blue Oyster Cult - (Dont Fear) The Reaper.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b41f803f-6a44-4f4d-a75e-748879c4e81c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "182 - The Drifters - Save The Last Dance For Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "355 - Creedence Clearwater Revival - Bad Moon Rising.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "229 - Muddy Waters - Mannish Boy.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "283 - Blondie - Call Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "133 - The Who - Wont Get Fooled Again.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "161 - Ray Charles - I Can't Stop Loving You.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "155 - Creedence Clearwater Revival - Proud Mary.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "7c0e3171-9c0e-44ce-841a-023f61fc8c57.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "92 - The Ramones - Blitzkrieg Bop.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "d870e52d-b097-4d09-b58b-a25a013c4c6c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "125 - The Shirelles - Will You Love Me Tomorrow.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "292 - The Clash - Train In Vain.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "271 - The Beach Boys - Sloop John B.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "404a2c9d-8152-459f-bc36-eb103061eaea.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "06 - The Beach Boys - Good Vibrations.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "8fc21667-6837-40b8-b6bc-4f68ec7a6b9d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "102c165d-4224-432f-9e54-adfbd28d8150.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "b60a4f22-c019-49c5-8516-fd4d7ce7ddc0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ebb1fb8b-1177-4c38-bfe8-bc87194fa8b2.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c81f0136-decd-42c3-b4de-a757205cd273.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "26 - The Beatles - A Day In The Life.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "348 - The Isley Brothers - That Lady.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "198 - The Jimi Hendrix Experience - Hey Joe.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "39c47401-134b-4654-948d-70ba07bf8e73.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "bf9b049e-5fcf-4b64-ba8d-5d5d6395176e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "357 - Jimi Hendrix - Little Wing.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "76796746-e847-4310-bce1-e3dcf3131663.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "343 - Lavern Baker - Jim Dandy.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "70 - Dionne Warwick - Walk On By.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "192 - Glen Campbell - Wichita Lineman.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "05920419-0e14-4b88-9c81-1403731197e9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "6f1e7751-9a0b-4fe9-98ad-341c07e842f2.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "341 - Jimmy Cliff - The Harder They Come.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "277d4af0-0044-45b6-8407-9aff642eb105.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "49e0de17-c11f-4cfd-8833-d784d87f57fd.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "23 - The Beatles - In My Life.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "56a7735c-04ec-4d6a-939d-dcfb6ef4a52c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "145 - Sly & The Family Stone - Everyday People.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "2cde980c-1b9e-4f15-a5de-5de1e7dce348.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "78 - James Brown - I Got You (I Feel Good).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "29 - The Beatles - Help.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "3f93fa99-61b9-4eec-bdf5-0421aa3f044c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "384 - The Beatles - Ticket To Ride.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "37 - Bob Marley - No Woman No Cry.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a0560bb4-fb6a-4a00-a975-92c0775ff992.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "0ec90929-24f3-48c0-96dd-b7f7bee0c2b1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "148 - Janis Joplin - Me And Bobby Mcgee.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "74 - Stevie Wonder - Superstition.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "d5e3121e-a6f4-42b8-b453-999103c470ae.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "126 - Big Joe Turner - Shake, Rattle & Roll.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "415 - The Four Tops - I Can't Help Myself.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "f002bfa1-eb5e-4d40-ab71-b614702831d7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "3d834cd3-49bf-416c-ba33-9c549e928ceb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "b1782af2-0f85-4c1d-9bdc-3b46ccac91ff.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "320 - Led Zeppelin - Heartbreaker.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "fbd0c469-5d3e-4895-9ff9-d73d7d479088.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "139 - The Beatles - I Saw Her Standing There.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "337 - Ray Charles - Hit The Road Jack.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "08 - The Beatles - Hey Jude.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "135 - The Beatles - While My Guitar Gently Weeps.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "95babb3c-54a9-412b-b388-4972c32a9658.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "241 - Sly & The Family Stone - Stand!.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "57 - Procol Harum - A Whiter Shade Of Pale.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "5ab6f891-2fe3-4678-9bc8-622f424e47e5.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "64a3538a-da63-43d1-a8b1-1749b4bc63e2.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "58ff3d7f-4517-4a36-8831-1c5daf79dcd7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "eb9dd9bc-511b-4c47-a4ff-6560a08ac9d0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "47 - Simon & Garfunkel - Bridge Over Troubled Water.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "900d89f8-2f7d-435c-a93a-7c05d2eba12f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "387 - Elton John - Tiny Dancer.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "5ec6d11b-3919-4c52-8386-9b3fb90f70cb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "a90710c0-18c2-475c-a872-257bad60604a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "768c57e6-2ea5-48bc-b81e-7e4850398a24.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "77 - Elvis Presley - Mystery Train.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "76 - The Beatles - Strawberry Fields Forever.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "184841a8-9d28-4969-82ec-94639b948c63.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "25295ef1-0cd0-4c20-a268-8c90f32dea08.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "cfbed404-50a6-4782-a6db-80b59ec6ae0c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "fe6ea127-a152-48c2-a2be-c26249bb0161.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "1721c9a0-8319-48d9-a987-6ced1c6bd11b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "442 - Little Richard - Keep A Knockin'.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "d3a67c2f-8183-4e91-82b7-b43d3a828e39.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "39 - Buddy Holly And The Crickets - That'll Be The Day.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "39d782d2-4fff-48b4-8007-32e46dcce4e6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ddbc013e-700f-4f55-b43e-8ca2ed84f164.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "303249fc-9387-43bc-97f5-0844f60fa43c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "475 - Beastie Boys - Sabotage.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "127 - David Bowie - Changes.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "226 - Van Morrison - Moondance.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "228 - The Clash - Should I Stay Or Should I Go.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "23433b31-e0e7-44f8-a970-07fd9b27e466.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2eab4fd5-d6dc-4abf-974f-7761d7e56f92.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "a498b953-79ce-41a8-a302-38e3f82c77ff.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "331 - Bonnie Raitt - I Cant Make You Love Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "307 - Frankie Lymon & The Teenagers - Why Do Fools Fall In Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "0f71c211-4689-4f7b-95d6-482da0edba93.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "6561a5e3-d425-471c-95b7-88464903d537.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "41d913b9-2a29-4910-bfd4-3941e8b4e159.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "4cb274f3-b89b-47f6-9e0a-7b2b868b23cc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "a533cd29-2b69-4aa3-8496-f26fab038709.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "f1468327-82c4-48e7-b91f-f7ce0f2ab3b1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "449 - The Beatles - Penny Lane.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "edd5620e-3b2d-47fc-9ff7-51d5f302d7c1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "97 - Chuck Berry - Roll Over Beethoven.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "70bbdb3f-7a5c-455c-a50f-caae732ea368.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "184 - The Beatles - Please Please Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "60520981-387d-484e-bc6b-194da4ada355.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "79bebd40-99e0-47af-b697-bb1322f8ef9b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "7b81c1ad-5181-44c4-8ae6-88f7e50b34fb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "322 - Public Enemy - Fight The Power.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b93e2f89-de2e-4700-8be8-06e734fce511.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "28 - Otis Redding - (Sittin' On) The Dock Of The Bay.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ed3996d8-85b9-4193-a7ba-6ee6a86ee882.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "175c4001-a247-4fcc-b021-eab62b89ecad.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "6282250d-8885-4c99-9447-75b6071941f3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "f908df08-96fa-4045-a9bb-70f376b229c3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "174 - The Rolling Stones - Paint It Black.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "2234a1d3-03ba-4bd2-abd1-55d35a8334f8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "787312fa-db84-4b70-b5eb-038f15e97c56.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2deb4efa-10f4-456a-bc0b-1c2395b7ab2b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "e03afdb4-0f62-449b-939f-684b789c5041.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "49 - The Eagles - Hotel California.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "74d3e5d2-0192-4f30-89f0-760d3d305446.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "99 - Creedence Clearwater Revival - Fortunate Son.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "71 - The Beach Boys - California Girls.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "68 - Bob Dylan - Tangled Up In Blue.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "407 - Nirvana - In Bloom.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "91 - Elvis Presley - Suspicious Minds.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "189 - The Bee Gees - Stayin Alive.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "105 - Simon & Garfunkel - The Boxer.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "123 - James Brown - It's A Man's, Man's, Man's World.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "64 - The Beatles - She Loves You.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "497 - Weezer - Buddy Holly.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "487 - The Drifters - Under The Boardwalk.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "0d50f6a1-c53f-4a02-bceb-0dba586b2058.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "13 - The Beatles - Yesterday.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "2f73245e-9ba5-4582-942a-1c2828761bd2.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "4dc4c4db-9769-41ee-bca5-dae906338fb6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "17 - Jimi Hendrix - Purple Haze.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "144 - The Ramones - I Wanna Be Sedated.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "236 - Buddy Holly And The Crickets - Everyday.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "2262e79c-5964-42f0-8aab-b473244aca1c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "180 - OutKast - Hey Ya.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "233 - The Animals - We Gotta Get Out Of This Place.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "347 - Elton John - Candle In The Wind.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "f0de8553-15fc-4884-8535-e83aa4b663d4.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2dd5a619-dafa-4d44-a972-0b11efed3016.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "7aacf5c0-0192-4fd9-b7ac-c2aa35a5105d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "411 - Donna Summer - I Feel Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c879e22b-a68c-4de7-8d9b-a35de3b87213.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "199 - Parliament - Flash Light.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "9c7e479a-5c4d-46d9-8ecc-2c5849ae114e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "b46e5d6e-4983-4f4e-a13c-f229cc85e4d7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "437 - Elvis Presley - Love Me Tender.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "0fdc7d20-d935-4637-8b38-c6e9ac2af438.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "209 - The Beach Boys - In My Room.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e3db7c8f-dbad-4eeb-89d3-cee24e04de9c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "315 - The Animals - Don't Let Me Be Misunderstood.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "31dec1e6-bb7a-43ba-85ae-945a8271d2f5.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "116 - The Rolling Stones - Honky Tonk Woman.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "159 - The Velvet Underground - I'm Waiting For The Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "6b620be7-cded-433d-a192-19d61fc3d35d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "106 - Bob Dylan - Mr. Tambourine Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "223 - Sly & The Family Stone - Dance To The Music.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "360 - Roberta Flack - Killing Me Softly With His Song.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "225 - Muddy Waters - Hoochie Coochie Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "459d1211-266d-4368-a276-53d9e3f4f98a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "188 - Creedence Clearwater Revival - Who'll Stop The Rain.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a97f2a31-958e-4314-a332-b3660a217220.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "d1d25e3b-dc3c-4607-a812-f58728339c34.mp3",
+            "label": 0
+        }
+    ],
+    "val": [
+        {
+            "audio_files_path": "010aeac5-c0ef-4061-a6d6-58f9484b79a2.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "88f9579f-9a12-4b4c-9d68-e9725529fb9d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "466 - Del Shannon - Runaway.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "3f829c34-a59b-4558-98cd-00e751fd4dbc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "603f79d6-7bf8-4bd3-93e4-d7f349183654.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "456 - Lloyd Price - Stagger Lee.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "84 - The Police - Every Breath You Take.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "8dcdb6a4-fa6e-4e4b-9053-2dd94a3ff23c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "801b01fd-b007-4dfa-aef4-974fc140262e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "0cc75a48-6717-421d-a112-eb971dc5eb4e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "29d434d5-a3d5-43ff-ad1f-9868e96987bd.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "328 - The Doors - The End.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "342 - Dion - Runaround Sue.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c680ecb4-0b26-42fe-8108-3f1fda1827b1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "388 - The Police - Roxanne.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "278 - The Cure - Pictures Of You.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "9ab8818b-ed83-44d4-a522-26dad08683e3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2910d4fb-2fdd-4550-9d78-6bd5c87da6c0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "344 - Big Brother & The Holding Company - Piece Of My Heart.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "fb4a6af5-1be7-4a2d-9ff9-857f104d5b06.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "04064b32-5685-4efe-9ad5-f1c9d517e1cf.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "96 - Jerry Lee Lewis - Great Balls Of Fire.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "24 - The Impressions - People Get Ready.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "72ea4862-cd3e-44fd-aa09-de710a9b47c7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "476 - Foreigner - I Want To Know What Love Is.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "61 - Jerry Lee Lewis - Whole Lotta Shakina\u0302\u00b4 Goinga\u0302\u00b4 On.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "20070682-0ce6-4f18-8041-6b9f25653004.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "129 - Steppenwolf - Born To Be Wild.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "310 - Black Sabbath - Iron Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "251 - Bobby Darin - Mack The Knife.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "81 - Fats Domino - Blueberry Hill.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "444 - Sonny & Cher - I Got You Babe.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e9e31679-6438-4382-9a94-dc94c3f498cc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "7a1be7b3-9146-49c4-b602-b1d8f3b67f14.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "498446d0-db6c-4648-b08b-3e012d60d496.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "426 - Deep Purple - Smoke On The Water.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "62061322-be94-40c6-859e-e290ebed4c15.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "89c0def5-fb87-423e-814e-67ac895dc942.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2e3f184c-0131-489b-acf0-a8030d1b17fa.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "7ea76ae8-1682-4278-bd19-a892c4309bea.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "053b8c11-26d3-40b0-ac28-351cb22d474b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ffb92798-d6a9-4aaf-b3bc-5c0d1dc6acb7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c9258169-4d69-4fa5-885b-fca80e0e695f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "260 - The Dells - Oh What A Night.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "9a12553b-7ae1-4e35-9c24-de4224ba47ba.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "59 - Bob Dylan - The Times They Are A-Changin'.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "2993fbd0-fb45-4669-ad8b-bcca75399e2c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "333 - Norman Greenbaum - Spirit In The Sky.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "386 - Eric B And Rakim - I Know You Got Soul.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "351 - The Platters - The Great Pretender.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "309 - Tina Turner - What's Love Got To Do With It.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "53 - Sex Pistols - Anarchy In The U.K.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "818112d6-fec9-48d8-88d9-b165331ea071.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "327 - Jerry Butler - For Your Precious Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "498 - Brook Benton - Rainy Night In Georgia.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "483 - The Cure - Just Like Heaven.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "239 - Dion - The Wanderer.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "162 - Sinead O'connor - Nothing Compares 2 U.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "291 - The Zombies - She's Not There.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c951a3d5-cfdb-4e2c-9d2e-de87e05a9470.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "181 - Booker T. & The M.G.S - Green Onions.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "215 - The Chords - Sh-Boom.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "417 - N.W.A. - Fuck The Police.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "221 - Lou Reed - Walk On The Wild Side.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ae276117-e824-47f2-b6d3-09270bd53653.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "15 - Clash - London Calling.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "d51ab25f-0279-44cb-a25a-129573f78c35.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "35 - The Doors - Light My Fire.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "431 - Fats Domino - Ain't That A Shame.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "0084af96-0ab1-4a48-89a2-752536e6fd44.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "399 - Metallica - Enter Sandman.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "175 - Bobby Fuller Four - I Fought The Law.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "250 - Black Sabbath - Paranoid.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "363 - The Box Tops - The Letter.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "503063fa-287c-4400-865e-57b4ef1cee02.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "20e44d85-376e-44ec-8092-7959029562b8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "410 - The Pixies - Monkey Gone To Heaven.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b1e36e82-50a8-4714-88b3-ab3bbab5e502.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "6465c29b-8109-4a69-96f5-e9f2ca1e4c98.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "89 - The Mamas & The Papas - California Dreamin'.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a6427349-57af-4d02-8ef0-44512cf27cdd.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "e8e87671-b466-448e-bfe4-5eefff6df7c6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "4bbcb6bc-bf13-4b65-9478-360cad63c297.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "436 - Love - Alone Again Or.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a68692f8-3a7d-4f7e-ab4c-ce503ed3e1cc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "381 - Aaron Neville - Tell It Like It Is.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "eedc2a74-f0ca-4660-9680-76dffefb6a86.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "d53b9f0f-912b-41dc-8ee2-7f395395118c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "d96cf4c4-4cf7-4e85-ba25-8171400b02fd.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "200 - Beck - Loser.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a275dacd-f5a0-4132-9417-5a476aec5eb7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "485 - Paul Simon - Graceland.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "903dcdfa-c5ca-434e-9d8e-b58cd78513a7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "3a4df318-ebb6-4b27-abef-f098d4db43bc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "279 - The Dixie Cups - Chapel Of Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "1e6b5d82-e2f5-4a80-a6fc-be2e751f3472.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "10372bd4-b315-477a-a918-efb67935d7fe.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "e85598ac-66e9-4d3d-91de-9defbdceda5a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "d5de13d2-f9f4-4bf6-b436-944778943f8d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "267 - New York Dolls - Personality Crisis.mp3",
+            "label": 1
+        }
+    ],
+    "adv_val": [
+        {
+            "audio_files_path": "b59dd9f4-18bc-4e63-9416-ef9260ac0c28.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "458 - Sam & Dave - Soul Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "4d21e5c9-7c0b-47a7-a69d-403cc12eb56f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "415ae205-3ec9-426e-ae1b-87f32a6e8556.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "68061145-2327-457b-b895-7da9ed942f42.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "801951a3-4064-4033-b8a2-bfb3306bf8b1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "260f87ab-57e4-4c65-b0e3-4993607b441d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "90 - The Five Satins - In The Still Of The Night.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "90b6d7c7-0ced-4904-85af-7e4f7cabe85e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "338 - Paul Mccartney - Maybe I'm Amazed.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "118 - Isley Brothers - Shout (Parts 1 And 2).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "439 - John Mellencamp - Pink Houses.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ccc91eac-8da5-4e72-ba7e-51129770d9f5.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "382 - The Verve - Bittersweet Symphony.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "256 - Radiohead - Paranoid Android.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "395 - The Shangri-Las - Remember (Walkin' In The Sand).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "346c9afd-17fa-45fb-ade5-7ccf122c8aae.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "337 - Michael Jackson - Beat It.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "0f070f69-7c3d-4254-bc0a-f4f134ea8574.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "81dd4fd8-b268-45bd-b52a-a5c695189704.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "438 - The Stooges - I Wanna Be Your Dog.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a64e0682-42dd-4f81-80f5-ef18faeb15d0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "217 - Dolly Parton - Jolene.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "bd89f62e-1e00-4604-ad29-4119812ec093.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "52062159-5e92-4565-a78d-7b2e8307e106.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "489 - Gloria Gaynor - I Will Survive.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "398a9148-d0de-4494-abd9-c2822ee10138.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "54 - Percy Sledge - When A Man Loves A Woman.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "151 - The Penguins - Earth Angel.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "f483eccf-bc45-4ecb-9b8c-95046557c205.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "477 - Rick James - Super Freak.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "183 - B.B. King - The Thrill Is Gone.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "d2db6172-d479-4316-a7d2-d5a48a1740b6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "8c5e6701-59c9-4dd5-8cd9-9cb3888a0e3a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "240 - Dusty Springfield - Son Of A Preacher Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "c07379f5-edd2-4b57-9582-670f6fee000d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "94319138-049f-4d92-a79b-7100fddf4c38.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "329 - Earth Wind & Fire - That's The Way Of The World.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "96eb6844-0770-4415-8aba-58efa60ebcaf.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "313 - Screamin' Jay Hawkins - I Put A Spell On You.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "1ade0bbd-19bc-4b06-8295-691876246661.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ba6bb8cf-7fae-46bc-8df1-60c629b10210.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "a91c3933-b8f0-4731-b800-79de5b5aa5fb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "412 - Bobbie Gentry - Ode To Billy Joe.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "165 - Tracy Chapman - Fast Car.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "499 - Thin Lizzy - The Boys Are Back In Town.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "03 - John Lennon - Imagine.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "788859af-9004-4587-b3d8-2fe1ccd96b86.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "177 - Tom Petty - Free Fallin'.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "400 - Paul Revere & The Raiders - Kicks.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b010c2a6-8fc0-4649-a21c-39d56de6b923.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "7edf4368-d664-4357-8dcc-b5c660b184e1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "447 - The Shangri-Las - Leader Of The Pack.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ea2a813c-c45b-44df-a8bb-b210569d876f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "cb1a5ca0-a4c0-40e7-891d-a2f82d1f6256.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "58 - Michael Jackson - Billie Jean.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "300 - Madonna - Like A Prayer.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "365 - The Righteous Brothers - Unchained Melody.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "9c8b0902-ad7c-4d7b-8f98-edfb8c569e38.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "262 - Smokey Robinson - Ooo Baby Baby.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "345 - Ritchie Valens - La Bamba.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "243 - The B-52S - Love Shack.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "491 - Dusty Springfield - You Don't Have To Say You Love Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "201 - New Order - Bizarre Love Triangle.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "af896a4b-ed58-4bfe-a2b0-b51ce1cc4585.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "fd0f8e96-95cb-442b-b830-a3a8ca411cc0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "469 - Carole King - It's Too Late.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "fdc6cbdb-d2ef-4f7e-aff4-331e7c7affa6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "428 - Mitch Ryder & The Detroit Wheels - Devil With A Blue Dress On, Good Golly Miss Molly.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "40bdaed2-6fc6-423c-bec6-bc0f4ab3c6b3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "468 - The Stooges - Search And Destroy.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "66f4cfb6-ec65-44e8-b393-65d9f3f4846c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "10ee8e93-6085-4d5a-a732-7486b6a89f7e.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "146 - The B-52's - Rock Lobster.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "253 - Mott The Hoople - All The Young Dudes.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "3e6358e7-bf19-48e1-bcc6-5ef06244797a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "353 - Eric Clapton - Tears In Heaven.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ffeee75d-0fe7-48c6-8251-daba84bf829d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "286 - Pavement - Summer Babe (Winter Version).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ec98c7eb-e6ea-4eed-b18f-1653e4172ecc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "67f440f0-eed1-4e98-a483-ab44e54a9f51.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "471 - Willie Nelson - On The Road Again.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "dc48fe2c-3e9e-4587-8721-927c76abf951.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "376 - Radiohead - Fake Plastic Trees.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e2230f33-9dbd-4d6c-9fee-5dff1f21bced.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "391 - Band Of Gold - Freda Payne.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "78f81070-1323-4f1d-ab00-fa12b8386f97.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "418 - Crosby Stills And Nash - Suite Judy Blue Eyes.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "446 - Toots And The Maytals - Pressure Drop.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "269 - The Modern Lovers - Roadrunner.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "96a76d66-1ac5-4d00-a8cf-7d9e858d2daf.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "224 - Chic - Good Times.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "26ee6707-754d-4522-acc2-ee530449a10f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "2cbc0f04-9469-429f-97c3-3d4ce32b4407.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ef1e81a7-0740-4765-932d-ac0d3b53ea50.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "302 - Willie Nelson - Blue Eyes Crying In The Rain.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "63 - Buffalo Springfield - For What It's Worth.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "406d2c12-83a6-4ae7-a842-c7a7c3f7de69.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "8d4e1840-a4fc-4b91-93e5-c18baa100184.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "6fde43c5-1725-49f6-954b-81e3a5346bb9.mp3",
+            "label": 0
+        }
+    ],
+    "test": [
+        {
+            "audio_files_path": "254 - Ac Dc - Highway To Hell.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "405 - Carpenters - We've Only Just Begun.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "57a440a6-e70c-4ebb-b3d0-6a13529c5cdb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "169 - R.E.M. - Losing My Religion.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "13d0b114-0687-4d39-9340-5212f7262775.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "213 - Hank Williams - Your Cheatin' Heart.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "318 - Elvis Costello - Alison.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "409 - Cream - Crossroads.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "56ea63b7-77b6-401b-a4a4-f3a4cc956032.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "f13f31b7-02b5-4dae-9d62-bea5cf04b314.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "a826e158-e4ec-4190-9e4d-17259088bf24.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "41d1ec0f-29da-4f8f-8f18-b1979d7980fb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "9c5a9b51-3ec0-4879-9243-6e5364b4c6d4.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "60f6f7c1-241b-4788-8788-0b67e1d180d8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "171 - Abba - Dancing Queen.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "30 - Johnny Cash - I Walk The Line.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "32b5bd04-66d7-4ab6-b893-9f4cc44f6a9f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "132 - Bo Diddley - Who Do You Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "292a078d-5ad6-43bd-9923-c387a0bce38d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "187 - Ac Dc - Back In Black.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e326091d-6def-471b-9c98-a2b7a66a7d42.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "383 - The Allman Brothers Band - Whipping Post.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "349 - Ben E. King - Spanish Harlem.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "121 - Ben E. King - Stand By Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "78c94b62-b232-4b51-be26-e288b7a24e10.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "1c85cd0d-a564-4b7f-b8c0-89741461c237.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "314 - Pink Floyd - Comfortably Numb.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "297 - Neil Young - Heart Of Gold.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "287 - Run Dmc - Walk This Way.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "27 - Derek And The Dominos - Layla.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "4793ef8f-e327-4a05-9d46-e9abbc97e173.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "76d20b0a-692c-4441-9d40-e611168795bc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "95f4144c-d8ca-403c-81c5-3ead1979e25f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "b2be8e89-27fc-4589-a59b-6132f4a1e2cc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "482 - Alice Cooper - I'm Eighteen.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "330 - Queen - We Will Rock You.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "133f8bca-0b7a-46d5-bfb1-926d9539ac24.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "120 - The Jackson 5 - I Want You Back.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "9bebbb2d-8666-4423-b263-facf5859a6bb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "244 - The Spencer Davis Group - Gimme Some Lovin'.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "f3056daf-57bc-436c-80bf-9bd6ba9f3785.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "033ee1d7-bbcf-4b5d-97d4-99dc059ed361.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "1d39fe0b-ff7e-4e65-906d-ad131e672d7d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "af51e31b-ed0e-4dc3-b37e-6387147af5e3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "6cceeddc-e758-4ac7-b3de-abfb182f1ee6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "34 - Righteous Brothers - You've Lost That Lovin' Feelin'.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "356 - Eurythmics - Sweet Dreams (Are Made Of This).mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "37a09e79-e1ea-4bf4-9a86-52a491c56fb7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "65 - Cream - Sunshine Of Your Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a9fd6bcc-29ce-4402-bf58-91c9ef6e7d82.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "33f11b55-e865-4145-af5e-8a51747f11c4.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "95 - Carl Perkins - Blue Suede Shoes.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ed704078-876a-442c-9877-886107cd2213.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "f96bdf89-9f49-44ef-ba29-9d8e1be31626.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "214 - Neil Young - Rockin' In The Free World.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "284 - Elvis Costello - (What's So Funny About) Peace, Love And Understanding.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "319 - Alice Cooper - School's Out.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "163 - Queen - Bohemian Rhapsody.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "78609eec-04d1-4f78-88e1-d9a217691380.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "280 - Bill Withers - Ain't No Sunshine.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b2794760-7fe8-4497-9703-14e6d510c436.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c2e6d1a6-8b38-45bd-b4e7-f3e5a588fef4.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "208 - Them - Gloria.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a5d16c38-c06a-4176-afce-bfddba131a85.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "238 - Patsy Cline - I Fall To Pieces.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "3dc13130-77b3-4c59-bb95-744f7f351f78.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "195 - The Chantels - Maybe.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "451 - Chubby Checker - The Twist.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "440 - Salt-N-Pepa - Push It.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "453 - Guns N' Roses - Paradise City.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "8d416d76-ef8d-4241-839c-07de1d6490fb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "616ed27c-28f3-403a-9de0-415b92b2be13.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "990699e6-8795-4325-9538-053625b2cb77.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "495 - Smokey Robinson & the Miracles - Shop Around.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "414 - The Coasters - Young Blood.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "85 - Patsy Cline - Crazy.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "0b8d764f-d9e8-408b-874e-029c74902ed9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "164 - Johnny Cash - Folsom Prison Blues.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "425b3a6b-3bca-4d7a-ae6a-f3eb91edcb8b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "5bfc7e2a-7957-461e-806a-8bae9daaec39.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "5b3f48d7-7a12-4c16-baa5-aed46b6b9be8.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "0601f6ba-e7fb-4c96-8f5f-9b9461de5da9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "346 - Tupac Shakur - California Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b9b512ed-1311-4c34-890f-fdb1f983e0d6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "bbaa6a72-b099-4ef7-8b0a-74bf59bbc62a.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "fee21625-86a9-46a1-9e58-b539e36c43bf.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c0e9843d-b8d7-42cc-998d-926c94c5070f.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "5fa2502e-4348-4479-bc06-ee2cfc756f25.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "301 - Rod Stewart - Da Ya Think I'm Sexy.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "467 - Guns N' Roses - Welcome To The Jungle.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "cceafd92-5be7-4970-bfff-c90c628adcd3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "150 - The Byrds - Eight Miles High.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "409f5560-88c6-443f-8b94-45bd58ced63c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "194 - Buddy Holly - Peggy Sue.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "072ec8ac-e8cb-40ef-af5b-7bab313966e3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "479 - Labelle - Lady Marmelade.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "460 - The Chiffons - One Fine Day.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e887d73c-ad86-4a4e-9135-d440ea926eca.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "b23438af-04c4-4f17-9f5f-0cdd00464413.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "246 - Jackie Wilson - (Your Love Keeps Lifting Me) Higher And Higher.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "264 - Randy Newman - Sail Away.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "66 - Bob Marley And The Wailers - Redemption Song.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "bbe112ca-382b-4ece-b02b-c102252ac9f4.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ccdfe106-02ac-4fde-bf33-7ecddd34bd12.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "ccf7d1c1-ff3f-4fc4-bd2b-37d74c148829.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "358 - Martha Reeves And The Vandellas - Nowhere To Run.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "206162b8-a7b3-4c67-962e-79d5e546fff9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "196 - Guns N' Roses - Sweet Child O' Mine.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "29d794bc-0236-49d1-80b6-e510b32f0a45.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "219 - Howlin' Wolf - Spoonful.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "379 - R.E.M. - Radio Free Europe.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "227 - James Taylor - Fire And Rain.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "111 - Hank Williams - I'm So Lonesome I Could Cry.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "368 - Depeche Mode - Personal Jesus.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "398 - Lynyrd Skynyrd - Sweet Home Alabama.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "31495f15-0218-49da-b768-c7772ad9e399.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "902576a2-571a-47bf-b748-f13863d582ff.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "354 - Elvis Costello - Watching The Detectives.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e6d9a4d7-a7dd-4959-9279-f7f419218f40.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "306 - The Jam - That's Entertainment.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "157 - The Flamingos - I Only Have Eyes For You.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "375 - Pink Floyd - Another Brick In The Wall Part 2.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "08ade5de-7f98-4d01-9dcb-fede21c0dbf6.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "234 - The Byrds - I'll Feel A Whole Lot Better.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "316 - Pink Floyd - Wish You Were Here.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "3873f06b-0a90-49ff-872b-47ae2deae55d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "500 - Boston - More Than A Feeling.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ae0d4a42-a31f-4d69-82da-f1f71577497c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "fc2a9911-d087-4caf-bb74-b00815890f92.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "492 - Jackson Browne - Running On Empty.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "425 - The Smiths - William, It Was Really Nothing.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "40 - Martha Reeves And The Vandellas - Dancing In The Streets.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "1a13734d-09b8-47f9-bdda-a1371c42be7b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "429 - Solomon Burke - Everybody Needs Somebody To Love.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "8e93c7ae-3410-41fb-a537-09ff40dd35cd.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "378e99d9-20bb-4256-a02e-cf234c5ea6dc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "147 - Iggy Pop - Lust For Life.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "391016b0-9edc-4a8f-8ab6-a41c083d3168.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "474 - Funkadelic - One Nation Under A Groove.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "369 - Bo Diddley - I'm A Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "179 - Joy Division - Love Will Tear Us Apart.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "e378ed42-291d-49b0-a1a2-e0db79d710d9.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "5ea5d6ec-4d14-4e22-95c0-25f8cdab938c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "50 - Smokey Robinson & the Miracles - The Tracks Of My Tears.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "0c44d081-3434-4f54-918e-28c725a74f15.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "267c6d2e-a313-4f82-aea7-0db21fadc3a0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "486 - The Smiths - How Soon Is Now.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "5888bbd2-665d-47ee-ab56-791b4909b12c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "323 - Patti Smith - Dancing Barefoot.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "ac54b39b-2255-4899-92b6-fa661296123d.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "462 - The Staple Singers - Respect Yourself.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "a4001959-7476-46e4-b14a-ec701119a5f1.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "33 - Ike And Tina Turner - River Deep Mountain High.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "87 - Johnny Cash - Ring Of Fire.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "79 - The Byrds - Mr Tambourine Man.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "205 - Bill Withers - Lean On Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "470 - Joni Mitchell - Free Man In Paris.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "285 - Howlin' Wolf - Smokestack Lightnin'.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "1b577b1f-ce09-4943-aec1-de720aad3c89.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "c440a3cd-c660-4191-aac6-5cfbbfb13f83.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "321 - Neil Young - Cortez The Killer.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "40bc75d1-8393-49b3-80ee-1c5bfbd40dfc.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "282 - Joni Mitchell - Help Me.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "5eb3eebb-bd9c-4a01-9742-85f1a5f0f2a3.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "419 - Dr. Dre - Nuthin' But A G Thang.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "461862a9-c804-43e2-a4bb-6a14fc7e425b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "1e084951-5e4f-4268-b038-720e1643f024.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "191 - Lynyrd Skynyrd - Free Bird.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "32 - Rolling Stones - Sympathy For The Devil.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "29a8ffb8-fbff-44df-b851-42327d70a494.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "154 - Buddy Holly - Rave On.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "05bfa7b3-7143-44f8-b42a-3372361743d5.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "16d5a622-5b5c-44bb-8669-b34287a227fa.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "d7eb5542-a87a-4825-822c-fe8bec47baa0.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "170 - Joni Mitchell - Both Sides Now.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "02 - Rolling Stones - (I Can't Get No) Satisfaction.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "392 - The Five Stairsteps - O-O-H Child.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "d0c83961-bf3d-4936-81b1-31edd04e3c76.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "6e2838b9-547e-4573-9260-1b89e2d988f7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "9265220a-1ea2-4813-bc00-05d3a22dbe73.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "98df863e-b13b-43c0-8d12-85d58040803c.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "226439ad-e34c-455c-b407-b6d75e098056.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "eb80739b-b4db-426a-bbc2-3cc9502bf37b.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "804bb4f9-14be-437f-b07b-27f53e431d10.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "370ba172-6479-4dcb-a63f-c8a9cfc023a5.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "a8221465-cff2-400c-99c0-79f598c877b4.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "e3e5977d-3d04-47b6-bf04-8faf9842c6c7.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "276 - The Staple Singers - I'll Take You There.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "62 - Bo Diddley - Bo Diddley.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "f6cfc892-d69e-4850-bcf0-67a91fd8ccd5.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "a5a65abf-75c7-4473-8986-8058f2125696.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "39c681d4-5e39-4da6-bbae-53cae24e76fb.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "218 - John Lee Hooker - Boom Boom.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "130 - Rod Stewart - Maggie May.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "367 - Cream - White Room.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "308 - Jackie Wilson - Lonely Teardrops.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "55 - The Kingsmen - Louie Louie.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "257 - The Troggs - Wild Thing.mp3",
+            "label": 1
+        },
+        {
+            "audio_files_path": "b5020bbd-d764-4f99-9a96-eadbb02c4f89.mp3",
+            "label": 0
+        },
+        {
+            "audio_files_path": "a04a1c6f-dce5-474d-af1a-9c3de764b09c.mp3",
+            "label": 0
+        }
+    ]
+}
