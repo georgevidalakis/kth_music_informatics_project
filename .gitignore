@@ -5,3 +5,4 @@ clap_embeddings/
 training_metrics/
 adversarial_audio/
 playground/
+notebooks/*.np[yz]
