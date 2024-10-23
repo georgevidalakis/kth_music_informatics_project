@@ -3,20 +3,26 @@ from __future__ import annotations
 import os
 import math
 import json
+import time
+import string
+import random
 from collections.abc import Iterable
 from typing import Tuple, List, Optional
 
 import torch
 import laion_clap  # type: ignore
+import numpy as np
 import torch.nn as nn
+from tqdm import tqdm  # type: ignore
 import soundfile as sf  # type: ignore
 
-from utils import seed_everything
 from classifiers.mlp import MLP
+from utils import seed_everything
+from dataset_splits_models import DatasetSplits
 from embeddings_computing import load_clap_music_model
 from embeddings_computing import load_audio_data_for_clap
-from adversarial_models import AdversarialResult, AdversarialAttacker
-from constants import CLAP_SR, Label, AI_AUDIO_DIR_PATH, ADVERSARIAL_AUDIO_DIR_PATH
+from adversarial_models import AdversarialInterationResult, AdversarialResult, AdversarialAttacker, AdversarialExperimentParams, AdversarialExperiment
+from constants import CLAP_SR, Label, ADVERSARIAL_AUDIO_DIR_PATH, DATASET_SPLITS_FILE_PATH, ADVERSARIAL_EXPERIMENTS_DIR_PATH
 
 
 class AudioWindowsDataIterator:
@@ -144,8 +150,9 @@ class PGDAdversarialAttacker(AdversarialAttacker):
             self,
             audio_file_path: str,
             target_label: int,
-            ) -> AdversarialResult:
+            ) -> Tuple[AdversarialResult, np.ndarray]:
         audio_data = load_audio_data_for_clap(audio_file_path)
+        start_timestamp = time.time()
         pure_audio_data = torch.tensor(audio_data, device='cuda:0')
         adversarial_audio_data = torch.tensor(audio_data, requires_grad=True, device='cuda:0')
         target_label_tensor = torch.tensor([target_label], dtype=torch.float, device='cuda:0')
@@ -154,24 +161,26 @@ class PGDAdversarialAttacker(AdversarialAttacker):
         init_target_pred_confidence = None
         max_target_pred_confidence = float('-inf')
         argmax_adversarial_audio_data = None
-        argmax_snr = None
         snr = float('inf')
+        adversarial_iterations_results: List[AdversarialInterationResult] = []
         for iter_idx in range(self.max_iter):
             audio_windows_embeddings = self.audio_windows_embeddings_extractor(adversarial_audio_data)
             audio_embedding = torch.mean(audio_windows_embeddings, dim=0)
             y_pred = self.classifier(audio_embedding)[0]
             loss = self.criterion(y_pred, target_label_tensor)
             target_pred_confidence = get_target_pred_confidence(y_pred, target_label)
+            adversarial_iterations_results.append(AdversarialInterationResult(
+                target_pred_confidence=target_pred_confidence,
+                snr=snr,
+                duration_secs_since_attack_start=time.time() - start_timestamp,
+            ))
             # print(f'Iter {iter_idx}:')
-            # print(f'target_pred_confidence {target_pred_confidence:.5f}')
-            # print(f'loss {loss:.5f}')
-            # print(f'snr {snr:.5f}')
+            # print(adversarial_iterations_results[-1].model_dump_json(indent=4))
             if init_target_pred_confidence is None:
                 init_target_pred_confidence = target_pred_confidence
             if target_pred_confidence > max_target_pred_confidence:
                 max_target_pred_confidence = target_pred_confidence
                 argmax_adversarial_audio_data = adversarial_audio_data.detach().cpu().numpy()
-                argmax_snr = snr
                 if target_pred_confidence >= self.required_target_pred_confidence:
                     break
             loss.backward()
@@ -179,63 +188,127 @@ class PGDAdversarialAttacker(AdversarialAttacker):
             adversarial_audio_data = adversarial_audio_data.detach() - self.learning_rate * adversarial_audio_data.grad
             adversarial_audio_data, snr = self.snr_projector(pure_audio_data, adversarial_audio_data.detach())
             adversarial_audio_data.requires_grad = True
-        assert (
-            init_target_pred_confidence is not None and
-            argmax_adversarial_audio_data is not None and
-            argmax_snr is not None
-        )
-        return AdversarialResult(
-            audio_file_path=audio_file_path,
-            init_target_pred_confidence=init_target_pred_confidence,
-            max_target_pred_confidence=max_target_pred_confidence,
-            num_iter=iter_idx,
-            argmax_adversarial_audio_data=argmax_adversarial_audio_data,
-            argmax_snr=argmax_snr,
+        assert argmax_adversarial_audio_data is not None
+        return (
+            AdversarialResult(
+                audio_file_path=audio_file_path,
+                iterations_results=adversarial_iterations_results,
+            ),
+            argmax_adversarial_audio_data,
         )
 
 
-def main() -> None:
-    seed_everything(42)
-    clap_model = load_clap_music_model(use_cuda=True)
+def is_adversarial_experiment_covered_check(adversarial_experiment_params: AdversarialExperimentParams) -> bool:
+    adversarial_experiments_files_names = os.listdir(ADVERSARIAL_EXPERIMENTS_DIR_PATH)
+    for other_adversarial_experiment_file_name in adversarial_experiments_files_names:
+        other_adversarial_experiment_file_path = os.path.join(ADVERSARIAL_EXPERIMENTS_DIR_PATH, other_adversarial_experiment_file_name)
+        with open(other_adversarial_experiment_file_path) as f:
+            other_adversarial_experiment = AdversarialExperiment.model_validate_json(f.read())
+        other_adversarial_experiment_params = other_adversarial_experiment.params
+        if (other_adversarial_experiment_params.window_size == adversarial_experiment_params.window_size and
+                other_adversarial_experiment_params.hop_size == adversarial_experiment_params.hop_size and
+                other_adversarial_experiment_params.min_snr == adversarial_experiment_params.min_snr and
+                other_adversarial_experiment_params.max_iter >= adversarial_experiment_params.max_iter and
+                other_adversarial_experiment_params.required_target_pred_confidence >= adversarial_experiment_params.required_target_pred_confidence and
+                other_adversarial_experiment_params.learning_rate == adversarial_experiment_params.learning_rate):
+            return True
+    return False
+
+
+def run_adversarial_experiment(
+        adversarial_experiment_params: AdversarialExperimentParams,
+        audio_files_paths: List[str],
+        clap_model: laion_clap.hook.CLAP_Module,
+        classifier: MLP,
+        ) -> Optional[AdversarialExperiment]:
+    if is_adversarial_experiment_covered_check(adversarial_experiment_params):
+        print(f'Skipping adversarial experiment that already exists with params:')
+        print(adversarial_experiment_params.model_dump_json(indent=4))
+        print()
+        return None
+    print('Running adversarial experiment with params:')
+    print(adversarial_experiment_params.model_dump_json(indent=4))
+    print()
     audio_windows_embeddings_extractor = AudioWindowsEmbeddingsExtractor(
-        window_size=int(10 * CLAP_SR),
-        hop_size=int(10 * CLAP_SR),
+        window_size=adversarial_experiment_params.window_size,
+        hop_size=adversarial_experiment_params.hop_size,
         max_batch_size=4,
         clap_model=clap_model,
     )
-    classifier = MLP(input_size=512).to('cuda:0')
-    classifier.load_state_dict(torch.load('classifier_checkpoints/mlp.pt', weights_only=True))
     snr_projector = SNRProjector(min_snr=60.)
     pgd_adversarial_attacker = PGDAdversarialAttacker(
         audio_windows_embeddings_extractor=audio_windows_embeddings_extractor,
         classifier=classifier,
-        max_iter=50,
-        required_target_pred_confidence=0.9,
-        learning_rate=0.00005,
+        max_iter=adversarial_experiment_params.max_iter,
+        required_target_pred_confidence=adversarial_experiment_params.required_target_pred_confidence,
+        learning_rate=adversarial_experiment_params.learning_rate,
         snr_projector=snr_projector,
     )
     adversarial_results: List[AdversarialResult] = []
-    for audio_file_name in os.listdir(AI_AUDIO_DIR_PATH)[:3]:
-        print(f'Processing {audio_file_name}')
-        audio_file_path = os.path.join(AI_AUDIO_DIR_PATH, audio_file_name)
-        adversarial_result = pgd_adversarial_attacker(audio_file_path=audio_file_path, target_label=Label.HUMAN.value)
-        adversarial_results.append(adversarial_result)
-        print(adversarial_result.model_dump_json(
-            indent=4, exclude={'audio_file_path', 'argmax_adversarial_audio_data'}
-        ))
-        adversarial_audio_file_path = os.path.join(ADVERSARIAL_AUDIO_DIR_PATH, audio_file_name)
-        sf.write(adversarial_audio_file_path, data=adversarial_result.argmax_adversarial_audio_data, samplerate=CLAP_SR)
+    for audio_file_path in tqdm(audio_files_paths, desc='Generating adversarial attacks'):
+        audio_file_name = os.path.basename(audio_file_path)
         print()
-
-    with open('adversarial_results.json', 'w') as f:
-        json.dump(
-            [
-                adversarial_result.model_dump(exclude={'argmax_adversarial_audio_data'})
-                for adversarial_result in adversarial_results
-            ],
-            f,
-            indent=4,
+        print(f'Processing {audio_file_name}')
+        adversarial_result, argmax_adversarial_audio_data = pgd_adversarial_attacker(
+            audio_file_path=audio_file_path, target_label=Label.HUMAN.value
         )
+        adversarial_results.append(adversarial_result)
+        # print(adversarial_result.model_dump_json(
+        #     indent=4, exclude={'audio_file_path'}
+        # ))
+        # adversarial_audio_file_path = os.path.join(ADVERSARIAL_AUDIO_DIR_PATH, audio_file_name)
+        # sf.write(adversarial_audio_file_path, data=argmax_adversarial_audio_data, samplerate=CLAP_SR)
+        print()
+    return AdversarialExperiment(
+        params=adversarial_experiment_params,
+        results=adversarial_results,
+    )
+
+
+def get_random_hex_string(length: int) -> str:
+    return ''.join(random.choices(string.hexdigits, k=length))
+
+
+def main() -> None:
+    seed_everything(42)
+    with open(DATASET_SPLITS_FILE_PATH) as f:
+        dataset_splits = DatasetSplits.model_validate_json(f.read())
+    audio_files_paths = [
+        labeled_audio_file_path.audio_file_path
+        for labeled_audio_file_path in dataset_splits.adv_val
+        if labeled_audio_file_path.label == Label.AI.value
+    ]
+    clap_model = load_clap_music_model(use_cuda=True)
+    classifier = MLP(input_size=512).to('cuda:0')
+    classifier.load_state_dict(torch.load('classifier_checkpoints/mlp.pt', weights_only=True))
+    window_size = int(10 * CLAP_SR)
+    hop_size = int(10 * CLAP_SR)
+    max_iter = 50
+    required_target_pred_confidence = 0.9
+    min_snr_values = [None, 50., 60.]
+    learning_rate_values = [0.000001, 0.00001, 0.0001]
+    for min_snr in min_snr_values:
+        for learning_rate in learning_rate_values:
+            adversarial_experiment_params = AdversarialExperimentParams(
+                window_size=window_size,
+                hop_size=hop_size,
+                min_snr=min_snr,
+                max_iter=max_iter,
+                required_target_pred_confidence=required_target_pred_confidence,
+                learning_rate=learning_rate,
+            )
+            adversarial_experiment = run_adversarial_experiment(
+                adversarial_experiment_params=adversarial_experiment_params,
+                audio_files_paths=audio_files_paths[:2],
+                clap_model=clap_model,
+                classifier=classifier,
+            )
+            if adversarial_experiment is not None:
+                adversarial_experiment_file_name = f'{get_random_hex_string(16)}.json'
+                adversarial_experiment_file_path = os.path.join(ADVERSARIAL_EXPERIMENTS_DIR_PATH, adversarial_experiment_file_name)
+                with open(adversarial_experiment_file_path, 'w') as f:
+                    json.dump(adversarial_experiment.model_dump(), f, indent=4)
+                print(f'Saved adversarial experiment to {adversarial_experiment_file_path}')
 
 
 if __name__ == '__main__':

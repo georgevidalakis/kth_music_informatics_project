@@ -1,108 +1,43 @@
 import os
-import json
-from typing import Tuple, List, Callable
 
-import tqdm  # type: ignore
 import torch
 import numpy as np
 import torch.nn as nn
-from pydantic import BaseModel
 from classifiers.mlp import MLP
 from sklearn.metrics import roc_auc_score, roc_curve, f1_score, ConfusionMatrixDisplay, confusion_matrix  # type: ignore
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader
 
 from utils import seed_everything
-from constants import (
-    Label, NUM_MLP_EPOCHS, TRAINING_METRICS_DIR_PATH, DATASET_SPLITS_FILE_PATH, AI_EMBEDDINGS_DIR_PATH,
-    HUMAN_EMBEDDINGS_DIR_PATH, CLAP_EMBEDDING_SIZE
-)
-
-
-def load_audio_embeddings(audio_embeddings_file_path: str) -> torch.Tensor:
-    return torch.tensor(np.load(audio_embeddings_file_path))
-
-
-def get_first_embedding(audio_embeddings: np.ndarray) -> np.ndarray:
-    return audio_embeddings[0]
-
-
-def get_mean_embedding(audio_embeddings: np.ndarray) -> np.ndarray:
-    return np.mean(audio_embeddings, axis=0)
-
-
-def get_mean_and_std_embedding(audio_embeddings: np.ndarray) -> np.ndarray:
-    mean_embedding = np.mean(audio_embeddings, axis=0)
-    std_embedding = np.std(audio_embeddings, axis=0)
-    return np.hstack((mean_embedding, std_embedding))
-
-
-class LabeledAudioFilePath(BaseModel):
-    audio_file_path: str
-    label: int
-
-
-class AudioDataset(Dataset):
-    def get_embedding_file_path(self, labeled_audio_file_path: LabeledAudioFilePath) -> str:
-        audio_file_name = os.path.basename(labeled_audio_file_path.audio_file_path)
-        audio_file_name_prefix = os.path.splitext(audio_file_name)[0]
-        if labeled_audio_file_path.label == Label.AI.value:
-            embedding_dir_path = AI_EMBEDDINGS_DIR_PATH
-        else:
-            embedding_dir_path = HUMAN_EMBEDDINGS_DIR_PATH
-        return os.path.join(embedding_dir_path, f'{audio_file_name_prefix}.npy')
-
-    def __init__(self, labeled_audio_file_paths: List[LabeledAudioFilePath], device: torch.device) -> None:
-        self.audios_embeddings = torch.vstack([
-            torch.mean(load_audio_embeddings(self.get_embedding_file_path(labeled_audio_file_path)), dim=0)
-            for labeled_audio_file_path in labeled_audio_file_paths
-        ]).to(device)
-        self.labels = torch.tensor(
-            [labeled_audio_file_path.label for labeled_audio_file_path in labeled_audio_file_paths],
-            dtype=torch.float,
-            device=device,
-        )
-
-    def __len__(self) -> int:
-        return len(self.labels)
-
-    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor]:
-        return self.audios_embeddings[idx], self.labels[idx].view(1)
+from dataset_splits_models import DatasetSplits
+from pytorch_datasets import MeanAudioDataset
+from constants import NUM_MLP_EPOCHS, TRAINING_METRICS_DIR_PATH, DATASET_SPLITS_FILE_PATH, CLAP_EMBEDDING_SIZE
 
 
 def main() -> None:
     seed_everything(42)
 
     with open(DATASET_SPLITS_FILE_PATH) as f:
-        dataset_splits = json.load(f)
+        dataset_splits = DatasetSplits.model_validate_json(f.read())
 
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-    train_dataset = AudioDataset(
-        labeled_audio_file_paths=[
-            LabeledAudioFilePath.model_validate(labeled_audio_file_path_dict)
-            for labeled_audio_file_path_dict in dataset_splits['train']
-        ],
-        device=device,
-    )
-    val_dataset = AudioDataset(
-        labeled_audio_file_paths=[
-            LabeledAudioFilePath.model_validate(labeled_audio_file_path_dict)
-            for labeled_audio_file_path_dict in dataset_splits['val']
-        ],
-        device=device,
-    )
-    test_dataset = AudioDataset(
-        labeled_audio_file_paths=[
-            LabeledAudioFilePath.model_validate(labeled_audio_file_path_dict)
-            for labeled_audio_file_path_dict in dataset_splits['test']
-        ],
-        device=device,
-    )
+    train_dataset = MeanAudioDataset(dataset_splits.train, device=device)
+    val_dataset = MeanAudioDataset(dataset_splits.val, device=device)
+    test_dataset = MeanAudioDataset(dataset_splits.test, device=device)
 
     train_dataloader = DataLoader(train_dataset, batch_size=32, shuffle=True)
     val_dataloader = DataLoader(val_dataset, batch_size=32, shuffle=False)
     test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
+    # train_dataset = IdentityAudioDataset(dataset_splits.train, device=device)
+    # val_dataset = IdentityAudioDataset(dataset_splits.val, device=device)
+    # test_dataset = IdentityAudioDataset(dataset_splits.test, device=device)
+
+    # train_dataloader = DataLoader(train_dataset, batch_size=32, shuffle=True, collate_fn=zero_pad)
+    # val_dataloader = DataLoader(val_dataset, batch_size=32, shuffle=False, collate_fn=zero_pad)
+    # test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=False, collate_fn=zero_pad)
+
+    # model = MLP(input_size=CLAP_EMBEDDING_SIZE)
     model = MLP(input_size=CLAP_EMBEDDING_SIZE)
     model.fit_scaler(train_dataset.audios_embeddings)
     model.to(device)
@@ -120,7 +55,7 @@ def main() -> None:
         epoch_train_loss = 0
         for X_batch, y_batch in train_dataloader:
             optimizer.zero_grad()
-            y_pred, _= model(X_batch)
+            y_pred = model(X_batch)[0]
             loss = criterion(y_pred, y_batch)
             loss.backward()
             optimizer.step()
@@ -241,7 +176,6 @@ def main() -> None:
 
     np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'y_val.npy'), y_val)
     np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'y_pred_val.npy'), y_pred_val)
-
 
 
 if __name__ == '__main__':

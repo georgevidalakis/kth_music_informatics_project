@@ -133,14 +133,14 @@ def split_audio_files_paths_considering_authors(
     return get_labeled_splits(splits_audio_files_paths, audio_files_paths, labels)
 
 
-def get_dir_files_names(dir_path: str) -> List[str]:
-    return [file_name for file_name in os.listdir(dir_path)]
+def get_dir_files_paths(dir_path: str) -> List[str]:
+    return [os.path.join(dir_path, file_name) for file_name in os.listdir(dir_path)]
 
 
 def main() -> None:
     seed_everything(42)
-    ai_audio_files_paths = get_dir_files_names(AI_AUDIO_DIR_PATH)
-    human_audio_files_paths = get_dir_files_names(HUMAN_AUDIO_DIR_PATH)
+    ai_audio_files_paths = get_dir_files_paths(AI_AUDIO_DIR_PATH)
+    human_audio_files_paths = get_dir_files_paths(HUMAN_AUDIO_DIR_PATH)
     audio_files_paths = ai_audio_files_paths + human_audio_files_paths
     labels = [Label.AI.value] * len(ai_audio_files_paths) + [Label.HUMAN.value] * len(human_audio_files_paths)
     splits_sizes = [600, 100, 100, 200]
