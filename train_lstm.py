@@ -91,7 +91,7 @@ def main() -> None:
         model.train()
         for batch_embeddings, batch_num_windows, batch_labels in train_dataloader:
             optimizer.zero_grad()
-            print(batch_embeddings.shape, batch_num_windows.shape)
+            # print(batch_embeddings.shape, batch_num_windows.shape)
             batch_pred_labels = model(batch_embeddings, batch_num_windows)
             loss = criterion(batch_pred_labels, batch_labels)
             loss.backward()
@@ -121,19 +121,19 @@ def main() -> None:
     cm = confusion_matrix(y_test, y_pred_test, labels=[0, 1])
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['AI', 'Human'])
     disp.plot()
-    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'mlp_confusion_matrix.png'))
+    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'lstm_confusion_matrix.png'))
     plt.close()
 
     plt.plot(train_losses, label='Train Loss')
     plt.plot(val_losses, label='Validation Loss')
     plt.legend()
-    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'mlp_training_losses.png'))
+    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'lstm_training_losses.png'))
     plt.close()
 
     plt.plot(train_accuracies, label='Train Accuracy')
     plt.plot(val_accuracies, label='Validation Accuracy')
     plt.legend()
-    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'mlp_training_accuracies.png'))
+    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'lstm_training_accuracies.png'))
     plt.close()
 
     # plot train and validation roc curves
@@ -145,7 +145,7 @@ def main() -> None:
     plt.ylabel('True Positive Rate')
     plt.title('ROC curve')
     plt.legend()
-    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'mlp_train_val_roc_curve.png'))
+    plt.savefig(os.path.join(TRAINING_METRICS_DIR_PATH, 'lstm_train_val_roc_curve.png'))
     plt.close()
 
     # np.save(os.path.join(TRAINING_METRICS_DIR_PATH, 'train_losses.npy'), np.array(train_losses))
