@@ -13,7 +13,7 @@ class SplitStrategy(str, Enum):
 
 
 CLAP_SR = 48_000
-PARENT_DIR_PATH =  os.path.dirname(os.path.abspath(os.getcwd()))
+PARENT_DIR_PATH = os.path.dirname(os.path.abspath(os.getcwd()))
 
 DATASET_SPLITS_FILE_PATH = 'dataset_splits.json'
 
@@ -34,3 +34,5 @@ SPLIT_STRATEGY = SplitStrategy.AUTHORS_CONSIDERED
 NUM_MLP_EPOCHS = 50
 
 CLAP_EMBEDDING_SIZE = 512
+
+ADVERSARIAL_EXPERIMENTS_DIR_PATH = 'adversarial_experiments'
