@@ -256,7 +256,7 @@ def run_adversarial_experiment(
         max_batch_size=4,
         clap_model=clap_model,
     )
-    snr_projector = SNRProjector(min_snr=60.)
+    snr_projector = SNRProjector(min_snr=adversarial_experiment_params.min_snr)
     pgd_adversarial_attacker = PGDAdversarialAttacker(
         audio_windows_embeddings_extractor=audio_windows_embeddings_extractor,
         classifier=classifier,
@@ -306,10 +306,10 @@ def main() -> None:
     
     window_size = int(10 * CLAP_SR)
     hop_size = int(10 * CLAP_SR)
-    max_iter = 100
+    max_iter = 150
     required_target_pred_confidence = 0.9
     min_snr_values = [None, 50., 60.]
-    learning_rate_values = [0.000001, 0.00001, 0.0001]
+    learning_rate_values = [0.0001]
     for min_snr in min_snr_values:
         for learning_rate in learning_rate_values:
             adversarial_experiment_params = AdversarialExperimentParams(
