@@ -24,7 +24,7 @@ class VotingMLP(nn.Module):
         self.scaler_mean.data = torch.mean(X_train_tensor, dim=0)
         self.scaler_std.data = torch.std(X_train_tensor, dim=0)
 
-    def forward(self, batch_embeddings: torch.Tensor, batch_num_windows: torch.Tensor) -> torch.Tensor:
+    def forward(self, batch_embeddings: torch.Tensor, batch_num_windows: torch.Tensor, *args, **kwargs) -> torch.Tensor:
         batch_scaled_embeddings = (batch_embeddings - self.scaler_mean) / self.scaler_std
         batch_windows_outputs = self.linear_stack(batch_scaled_embeddings)
         batch_size, num_windows, _ = batch_windows_outputs.shape

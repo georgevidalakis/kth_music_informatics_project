@@ -1,0 +1,9 @@
+{
+    "do_fit_scaler": true,
+    "hidden_size_0": 64,
+    "hidden_size_1": 64,
+    "dropout": 0.13967558322861762,
+    "train_batch_size": 32,
+    "learning_rate": 0.013059686307240732,
+    "weight_decay": 0.0005881788889041195
+}

@@ -1,0 +1,6 @@
+{
+    "do_fit_scaler": false,
+    "train_batch_size": 32,
+    "learning_rate": 0.08233118183930935,
+    "weight_decay": 0.000011046630163291664
+}

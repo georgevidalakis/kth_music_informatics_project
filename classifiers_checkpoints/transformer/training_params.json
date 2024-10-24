@@ -1,0 +1,9 @@
+{
+    "train_batch_size": 16,
+    "learning_rate": 0.00013249782455214762,
+    "weight_decay": 0.004737988515228325,
+    "T_max": 30,
+    "eta_min": 0.000011377740389134736,
+    "dim_ffn": 1024,
+    "num_heads": 4
+}
