@@ -28,7 +28,7 @@ from adversarial_models import (
 )
 from constants import (
     CLAP_SR, Label, ADVERSARIAL_AUDIO_DIR_PATH, DATASET_SPLITS_FILE_PATH, ADVERSARIAL_EXPERIMENTS_DIR_PATH,
-    CLASSIFIERS_CHECKPOINTS_DIR_PATH, CLAP_EMBEDDING_SIZE,
+    CLASSIFIERS_CHECKPOINTS_DIR_PATH, CLAP_EMBEDDING_SIZE, MAX_ADVERSARIAL_AUDIO_DURATION_SECS,
 )
 
 
@@ -181,8 +181,8 @@ class PGDAdversarialAttacker(AdversarialAttacker):
                 snr=snr,
                 duration_secs_since_attack_start=time.time() - start_timestamp,
             ))
-            print(f'Iter {iter_idx}:')
-            print(adversarial_iterations_results[-1].model_dump_json(indent=4))
+            # print(f'Iter {iter_idx}:')
+            # print(adversarial_iterations_results[-1].model_dump_json(indent=4))
             if init_target_pred_confidence is None:
                 init_target_pred_confidence = target_pred_confidence
             if target_pred_confidence > max_target_pred_confidence:
@@ -208,7 +208,9 @@ class PGDAdversarialAttacker(AdversarialAttacker):
 def is_adversarial_experiment_covered_check(adversarial_experiment_params: AdversarialExperimentParams) -> bool:
     adversarial_experiments_files_names = os.listdir(ADVERSARIAL_EXPERIMENTS_DIR_PATH)
     for other_adversarial_experiment_file_name in adversarial_experiments_files_names:
-        other_adversarial_experiment_file_path = os.path.join(ADVERSARIAL_EXPERIMENTS_DIR_PATH, other_adversarial_experiment_file_name)
+        other_adversarial_experiment_file_path = os.path.join(
+            ADVERSARIAL_EXPERIMENTS_DIR_PATH, other_adversarial_experiment_file_name
+        )
         with open(other_adversarial_experiment_file_path) as f:
             other_adversarial_experiment = AdversarialExperiment.model_validate_json(f.read())
         other_adversarial_experiment_params = other_adversarial_experiment.params
@@ -222,6 +224,10 @@ def is_adversarial_experiment_covered_check(adversarial_experiment_params: Adver
     return False
 
 
+def should_skip_audio_file_check(audio_file_path: str) -> bool:
+    return len(load_audio_data_for_clap(audio_file_path)) > CLAP_SR * MAX_ADVERSARIAL_AUDIO_DURATION_SECS
+
+
 def run_adversarial_experiment(
         adversarial_experiment_params: AdversarialExperimentParams,
         audio_files_paths: List[str],
@@ -229,7 +235,7 @@ def run_adversarial_experiment(
         classifier: MLP,
         ) -> Optional[AdversarialExperiment]:
     if is_adversarial_experiment_covered_check(adversarial_experiment_params):
-        print(f'Skipping adversarial experiment that already exists with params:')
+        print('Skipping adversarial experiment that already exists with params:')
         print(adversarial_experiment_params.model_dump_json(indent=4))
         print()
         return None
@@ -256,6 +262,9 @@ def run_adversarial_experiment(
         audio_file_name = os.path.basename(audio_file_path)
         print()
         print(f'Processing {audio_file_name}')
+        if should_skip_audio_file_check(audio_file_path):
+            print('Skipping!')
+            continue
         adversarial_result, argmax_adversarial_audio_data = pgd_adversarial_attacker(
             audio_file_path=audio_file_path, target_label=Label.HUMAN.value
         )
@@ -308,7 +317,7 @@ def main() -> None:
     max_iter = 50
     required_target_pred_confidence = 0.9
     min_snr_values = [None, 50., 60.]
-    learning_rate_values = [0.000001, 0.00001, 0.0001]
+    learning_rate_values = [1e-6, 1e-5, 1e-4]
 
     for min_snr in min_snr_values:
         for learning_rate in learning_rate_values:
@@ -322,13 +331,15 @@ def main() -> None:
             )
             adversarial_experiment = run_adversarial_experiment(
                 adversarial_experiment_params=adversarial_experiment_params,
-                audio_files_paths=audio_files_paths[:2],
+                audio_files_paths=audio_files_paths,
                 clap_model=clap_model,
                 classifier=classifier,
             )
             if adversarial_experiment is not None:
                 adversarial_experiment_file_name = f'{get_random_hex_string(16)}.json'
-                adversarial_experiment_file_path = os.path.join(ADVERSARIAL_EXPERIMENTS_DIR_PATH, adversarial_experiment_file_name)
+                adversarial_experiment_file_path = os.path.join(
+                    ADVERSARIAL_EXPERIMENTS_DIR_PATH, adversarial_experiment_file_name
+                )
                 with open(adversarial_experiment_file_path, 'w') as f:
                     json.dump(adversarial_experiment.model_dump(), f, indent=4)
                 print(f'Saved adversarial experiment to {adversarial_experiment_file_path}')
