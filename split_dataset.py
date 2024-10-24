@@ -1,13 +1,14 @@
 import os
 import json
 import random
-from typing import Tuple, List, Dict
+from typing import Tuple, List, Dict, Union
 
 import numpy as np
 
 from utils import seed_everything
 from constants import (
-    Label, SplitStrategy, SPLIT_STRATEGY, AI_AUDIO_DIR_PATH, HUMAN_AUDIO_DIR_PATH, DATASET_SPLITS_FILE_PATH
+    Label, SplitStrategy, SPLIT_STRATEGY, AI_AUDIO_DIR_PATH, HUMAN_AUDIO_DIR_PATH, DATASET_SPLITS_FILE_PATH,
+    NUM_CROSS_VALIDATION_FOLDS, TRAIN_VAL_SIZE, ADV_VAL_SIZE, TEST_SIZE,
 )
 
 
@@ -137,55 +138,47 @@ def get_dir_files_paths(dir_path: str) -> List[str]:
     return [os.path.join(dir_path, file_name) for file_name in os.listdir(dir_path)]
 
 
+def get_list_from_split_tuple(audio_files_paths: List[str], labels: List[int]) -> List[Dict[str, Union[str, int]]]:
+    return [
+        {
+            'audio_file_path': audio_file_path,
+            'label': label,
+        }
+        for audio_file_path, label in zip(audio_files_paths, labels)
+    ]
+
+
 def main() -> None:
     seed_everything(42)
     ai_audio_files_paths = get_dir_files_paths(AI_AUDIO_DIR_PATH)
     human_audio_files_paths = get_dir_files_paths(HUMAN_AUDIO_DIR_PATH)
     audio_files_paths = ai_audio_files_paths + human_audio_files_paths
     labels = [Label.AI.value] * len(ai_audio_files_paths) + [Label.HUMAN.value] * len(human_audio_files_paths)
-    splits_sizes = [600, 100, 100, 200]
+    assert TRAIN_VAL_SIZE % NUM_CROSS_VALIDATION_FOLDS == 0
+    splits_sizes = (
+        [TRAIN_VAL_SIZE // NUM_CROSS_VALIDATION_FOLDS] * NUM_CROSS_VALIDATION_FOLDS +
+        [ADV_VAL_SIZE, TEST_SIZE]
+    )
     if SPLIT_STRATEGY == SplitStrategy.AUTHORS_IGNORED:
         split_audio_files_func = split_audio_files_paths_ignoring_authors
     elif SPLIT_STRATEGY == SplitStrategy.AUTHORS_CONSIDERED:
         split_audio_files_func = split_audio_files_paths_considering_authors
     else:
         raise ValueError(f'Split strategy "{SPLIT_STRATEGY}" is not supported')
-    (
-        (train_audio_files_paths, train_labels),
-        (val_audio_files_paths, val_labels),
-        (adv_val_audio_files_paths, adv_val_labels),
-        (test_audio_files_paths, test_labels),
-    ) = split_audio_files_func(audio_files_paths, labels, splits_sizes)
+    splits = split_audio_files_func(audio_files_paths, labels, splits_sizes)
     dataset_split = {
-        'train': [
-            {
-                'audio_file_path': audio_files_path,
-                'label': label,
-            }
-            for audio_files_path, label in zip(train_audio_files_paths, train_labels)
+        'train_val_splits': [
+            get_list_from_split_tuple(split[0], split[1])
+            for split in splits[:NUM_CROSS_VALIDATION_FOLDS]
         ],
-        'val': [
-            {
-                'audio_file_path': audio_files_path,
-                'label': label,
-            }
-            for audio_files_path, label in zip(val_audio_files_paths, val_labels)
-        ],
-        'adv_val': [
-            {
-                'audio_file_path': audio_files_path,
-                'label': label,
-            }
-            for audio_files_path, label in zip(adv_val_audio_files_paths, adv_val_labels)
-        ],
-        'test': [
-            {
-                'audio_file_path': audio_files_path,
-                'label': label,
-            }
-            for audio_files_path, label in zip(test_audio_files_paths, test_labels)
-        ],
+        'adv_val': get_list_from_split_tuple(
+            splits[NUM_CROSS_VALIDATION_FOLDS][0], splits[NUM_CROSS_VALIDATION_FOLDS][1]
+        ),
+        'test': get_list_from_split_tuple(
+            splits[NUM_CROSS_VALIDATION_FOLDS + 1][0], splits[NUM_CROSS_VALIDATION_FOLDS + 1][1]
+        ),
     }
+
     with open(DATASET_SPLITS_FILE_PATH, 'w') as f:
         json.dump(dataset_split, f, indent=4)
 

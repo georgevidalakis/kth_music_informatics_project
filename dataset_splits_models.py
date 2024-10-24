@@ -9,7 +9,6 @@ class LabeledAudioFilePath(BaseModel):
 
 
 class DatasetSplits(BaseModel):
-    train: List[LabeledAudioFilePath]
-    val: List[LabeledAudioFilePath]
+    train_val_splits: List[List[LabeledAudioFilePath]]
     adv_val: List[LabeledAudioFilePath]
     test: List[LabeledAudioFilePath]

@@ -18,11 +18,18 @@ import soundfile as sf  # type: ignore
 
 from classifiers.mlp import MLP
 from utils import seed_everything
+from train_mlp import TrainingParams
 from dataset_splits_models import DatasetSplits
 from embeddings_computing import load_clap_music_model
 from embeddings_computing import load_audio_data_for_clap
-from adversarial_models import AdversarialInterationResult, AdversarialResult, AdversarialAttacker, AdversarialExperimentParams, AdversarialExperiment
-from constants import CLAP_SR, Label, ADVERSARIAL_AUDIO_DIR_PATH, DATASET_SPLITS_FILE_PATH, ADVERSARIAL_EXPERIMENTS_DIR_PATH
+from adversarial_models import (
+    AdversarialInterationResult, AdversarialResult, AdversarialAttacker, AdversarialExperimentParams,
+    AdversarialExperiment,
+)
+from constants import (
+    CLAP_SR, Label, ADVERSARIAL_AUDIO_DIR_PATH, DATASET_SPLITS_FILE_PATH, ADVERSARIAL_EXPERIMENTS_DIR_PATH,
+    CLASSIFIERS_CHECKPOINTS_DIR_PATH, CLAP_EMBEDDING_SIZE,
+)
 
 
 class AudioWindowsDataIterator:
@@ -174,8 +181,8 @@ class PGDAdversarialAttacker(AdversarialAttacker):
                 snr=snr,
                 duration_secs_since_attack_start=time.time() - start_timestamp,
             ))
-            # print(f'Iter {iter_idx}:')
-            # print(adversarial_iterations_results[-1].model_dump_json(indent=4))
+            print(f'Iter {iter_idx}:')
+            print(adversarial_iterations_results[-1].model_dump_json(indent=4))
             if init_target_pred_confidence is None:
                 init_target_pred_confidence = target_pred_confidence
             if target_pred_confidence > max_target_pred_confidence:
@@ -235,7 +242,7 @@ def run_adversarial_experiment(
         max_batch_size=4,
         clap_model=clap_model,
     )
-    snr_projector = SNRProjector(min_snr=60.)
+    snr_projector = SNRProjector(min_snr=adversarial_experiment_params.min_snr)
     pgd_adversarial_attacker = PGDAdversarialAttacker(
         audio_windows_embeddings_extractor=audio_windows_embeddings_extractor,
         classifier=classifier,
@@ -271,22 +278,38 @@ def get_random_hex_string(length: int) -> str:
 
 def main() -> None:
     seed_everything(42)
+
     with open(DATASET_SPLITS_FILE_PATH) as f:
         dataset_splits = DatasetSplits.model_validate_json(f.read())
+
     audio_files_paths = [
         labeled_audio_file_path.audio_file_path
         for labeled_audio_file_path in dataset_splits.adv_val
         if labeled_audio_file_path.label == Label.AI.value
     ]
+
     clap_model = load_clap_music_model(use_cuda=True)
-    classifier = MLP(input_size=512).to('cuda:0')
-    classifier.load_state_dict(torch.load('classifier_checkpoints/mlp.pt', weights_only=True))
+
+    classifier_checkpoint_dir_path = os.path.join(CLASSIFIERS_CHECKPOINTS_DIR_PATH, 'mlp')
+    classifier_training_params_file_path = os.path.join(classifier_checkpoint_dir_path, 'training_params.json')
+    classifier_checkpoint_file_path = os.path.join(classifier_checkpoint_dir_path, 'classifier.pt')
+    with open(classifier_training_params_file_path) as f:
+        training_params = TrainingParams.model_validate_json(f.read())
+    classifier = MLP(
+        input_size=CLAP_EMBEDDING_SIZE,
+        hidden_size_0=training_params.hidden_size_0,
+        hidden_size_1=training_params.hidden_size_1,
+        dropout=training_params.dropout,
+    ).to('cuda:0')
+    classifier.load_state_dict(torch.load(classifier_checkpoint_file_path, weights_only=True))
+
     window_size = int(10 * CLAP_SR)
     hop_size = int(10 * CLAP_SR)
     max_iter = 50
     required_target_pred_confidence = 0.9
     min_snr_values = [None, 50., 60.]
     learning_rate_values = [0.000001, 0.00001, 0.0001]
+
     for min_snr in min_snr_values:
         for learning_rate in learning_rate_values:
             adversarial_experiment_params = AdversarialExperimentParams(

@@ -6,14 +6,17 @@ import torch.nn as nn
 
 class MLP(nn.Module):
 
-    def __init__(self, input_size: int) -> None:
+    def __init__(self, input_size: int, hidden_size_0: int, hidden_size_1: int, dropout: float) -> None:
         super(MLP, self).__init__()
         self.scaler_mean = nn.Parameter(torch.zeros(input_size, dtype=torch.float), requires_grad=False)
         self.scaler_std = nn.Parameter(torch.ones(input_size, dtype=torch.float), requires_grad=False)
         self.linear = nn.Sequential(
-            nn.Linear(input_size, 100),
+            nn.Linear(input_size, hidden_size_0),
             nn.ReLU(),
-            nn.Linear(100, 1),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_size_0, hidden_size_1),
+            nn.ReLU(),
+            nn.Linear(hidden_size_1, 1),
         )
         self.sigmoid = nn.Sigmoid()
 

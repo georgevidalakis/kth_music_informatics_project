@@ -5,216 +5,231 @@
         "min_snr": 60.0,
         "max_iter": 50,
         "required_target_pred_confidence": 0.9,
-        "learning_rate": 1e-06
+        "learning_rate": 0.0001
     },
     "results": [
         {
-            "audio_file_path": "rolling_udio\\udio_500\\b59dd9f4-18bc-4e63-9416-ef9260ac0c28.mp3",
+            "audio_file_path": "rolling_udio\\udio_500\\346c9afd-17fa-45fb-ade5-7ccf122c8aae.mp3",
             "iterations_results": [
                 {
-                    "target_pred_confidence": 6.516458483929455e-07,
+                    "target_pred_confidence": 4.453747787236395e-11,
                     "snr": Infinity,
-                    "duration_secs_since_attack_start": 1.342266321182251
+                    "duration_secs_since_attack_start": 0.2213296890258789
                 },
                 {
-                    "target_pred_confidence": 8.350035386683885e-06,
-                    "snr": 90.22877033543006,
-                    "duration_secs_since_attack_start": 9.814529657363892
+                    "target_pred_confidence": 6.798693552578783e-12,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 1.8903288841247559
                 },
                 {
-                    "target_pred_confidence": 0.0001159260791609995,
-                    "snr": 88.01437761510215,
-                    "duration_secs_since_attack_start": 16.867539882659912
+                    "target_pred_confidence": 3.5016342603277906e-10,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 3.555452346801758
                 },
                 {
-                    "target_pred_confidence": 0.0014329657424241304,
-                    "snr": 87.1483309046811,
-                    "duration_secs_since_attack_start": 24.869142532348633
+                    "target_pred_confidence": 1.5598107694358987e-08,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 5.235842704772949
                 },
                 {
-                    "target_pred_confidence": 0.013400399126112461,
-                    "snr": 86.42046968054679,
-                    "duration_secs_since_attack_start": 32.8619863986969
+                    "target_pred_confidence": 4.61106310467585e-07,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 6.903171062469482
                 },
                 {
-                    "target_pred_confidence": 0.07062729448080063,
-                    "snr": 85.88754280482479,
-                    "duration_secs_since_attack_start": 40.852304220199585
+                    "target_pred_confidence": 3.0501273613481317e-06,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 8.57547903060913
                 },
                 {
-                    "target_pred_confidence": 0.5369644165039062,
-                    "snr": 85.41536537912668,
-                    "duration_secs_since_attack_start": 48.83031940460205
+                    "target_pred_confidence": 1.6962063455139287e-05,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 10.25835132598877
                 },
                 {
-                    "target_pred_confidence": 0.9318408370018005,
-                    "snr": 85.27293336634919,
-                    "duration_secs_since_attack_start": 56.78551626205444
+                    "target_pred_confidence": 5.682841219822876e-05,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 11.940953493118286
+                },
+                {
+                    "target_pred_confidence": 0.00013648108870256692,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 13.61974549293518
+                },
+                {
+                    "target_pred_confidence": 0.0002673084381967783,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 15.296727895736694
+                },
+                {
+                    "target_pred_confidence": 0.0007431923877447844,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 16.97541046142578
+                },
+                {
+                    "target_pred_confidence": 0.0016163851832970977,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 18.65857768058777
+                },
+                {
+                    "target_pred_confidence": 0.006147096399217844,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 20.322909832000732
+                },
+                {
+                    "target_pred_confidence": 0.011281573213636875,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 21.99711036682129
+                },
+                {
+                    "target_pred_confidence": 0.05760588124394417,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 23.68207049369812
+                },
+                {
+                    "target_pred_confidence": 0.11721907556056976,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 25.36368227005005
+                },
+                {
+                    "target_pred_confidence": 0.0026246781926602125,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 27.041566371917725
+                },
+                {
+                    "target_pred_confidence": 0.013394751586019993,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 28.718774795532227
+                },
+                {
+                    "target_pred_confidence": 0.08006424456834793,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 30.389677047729492
+                },
+                {
+                    "target_pred_confidence": 0.0774989053606987,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 32.05407905578613
+                },
+                {
+                    "target_pred_confidence": 0.0746471956372261,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 33.730008125305176
+                },
+                {
+                    "target_pred_confidence": 0.29030993580818176,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 35.394614696502686
+                },
+                {
+                    "target_pred_confidence": 0.12013968080282211,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 37.059279680252075
+                },
+                {
+                    "target_pred_confidence": 0.02890997752547264,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 38.71489405632019
+                },
+                {
+                    "target_pred_confidence": 0.9241493344306946,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 40.37623739242554
                 }
             ]
         },
         {
-            "audio_file_path": "rolling_udio\\udio_500\\4d21e5c9-7c0b-47a7-a69d-403cc12eb56f.mp3",
+            "audio_file_path": "rolling_udio\\udio_500\\260f87ab-57e4-4c65-b0e3-4993607b441d.mp3",
             "iterations_results": [
                 {
-                    "target_pred_confidence": 3.1920608378754878e-09,
+                    "target_pred_confidence": 1.1163268087699407e-09,
                     "snr": Infinity,
-                    "duration_secs_since_attack_start": 0.07959651947021484
+                    "duration_secs_since_attack_start": 0.1715693473815918
                 },
                 {
-                    "target_pred_confidence": 5.09847914997863e-08,
-                    "snr": 86.72600721740446,
-                    "duration_secs_since_attack_start": 1.0332744121551514
+                    "target_pred_confidence": 5.416079584819045e-09,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 1.4892170429229736
                 },
                 {
-                    "target_pred_confidence": 1.5845606071707152e-07,
-                    "snr": 84.85206675386301,
-                    "duration_secs_since_attack_start": 1.5280795097351074
+                    "target_pred_confidence": 3.175424012624717e-07,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 2.820556163787842
                 },
                 {
-                    "target_pred_confidence": 1.1214095820832881e-06,
-                    "snr": 84.1623311448756,
-                    "duration_secs_since_attack_start": 2.496701955795288
+                    "target_pred_confidence": 1.0313937309547327e-05,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 4.159296035766602
                 },
                 {
-                    "target_pred_confidence": 2.722151975831366e-06,
-                    "snr": 83.53677865697315,
-                    "duration_secs_since_attack_start": 3.002856731414795
+                    "target_pred_confidence": 0.00010179461969528347,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 5.482603549957275
                 },
                 {
-                    "target_pred_confidence": 7.826143701095134e-06,
-                    "snr": 82.89541946521318,
-                    "duration_secs_since_attack_start": 3.9444568157196045
+                    "target_pred_confidence": 0.0007402085466310382,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 6.814454078674316
                 },
                 {
-                    "target_pred_confidence": 2.4799295715638436e-05,
-                    "snr": 82.4846710978149,
-                    "duration_secs_since_attack_start": 4.438541650772095
+                    "target_pred_confidence": 0.003194488352164626,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 8.150801181793213
                 },
                 {
-                    "target_pred_confidence": 7.022734644124284e-05,
-                    "snr": 82.13736824725294,
-                    "duration_secs_since_attack_start": 5.390938758850098
+                    "target_pred_confidence": 0.006819871719926596,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 9.494408130645752
                 },
                 {
-                    "target_pred_confidence": 0.00010754218237707391,
-                    "snr": 81.78836656148013,
-                    "duration_secs_since_attack_start": 5.881196737289429
+                    "target_pred_confidence": 0.0174285639077425,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 10.83319354057312
                 },
                 {
-                    "target_pred_confidence": 0.00010647859744494781,
-                    "snr": 81.36177886665871,
-                    "duration_secs_since_attack_start": 6.840100049972534
+                    "target_pred_confidence": 0.06030717119574547,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 12.160534858703613
                 },
                 {
-                    "target_pred_confidence": 0.0002552360238041729,
-                    "snr": 80.97291054876288,
-                    "duration_secs_since_attack_start": 7.338019371032715
+                    "target_pred_confidence": 0.05969780683517456,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 13.507152557373047
                 },
                 {
-                    "target_pred_confidence": 0.00048271624837070704,
-                    "snr": 80.58624156404585,
-                    "duration_secs_since_attack_start": 8.290009498596191
+                    "target_pred_confidence": 0.07858770340681076,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 14.818891048431396
                 },
                 {
-                    "target_pred_confidence": 0.000752105435822159,
-                    "snr": 80.23513455132267,
-                    "duration_secs_since_attack_start": 8.777528762817383
+                    "target_pred_confidence": 0.00592912407591939,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 16.173207759857178
                 },
                 {
-                    "target_pred_confidence": 0.0014602071605622768,
-                    "snr": 79.84421741610178,
-                    "duration_secs_since_attack_start": 9.748358249664307
+                    "target_pred_confidence": 0.03233739361166954,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 17.49823546409607
                 },
                 {
-                    "target_pred_confidence": 0.002269061515107751,
-                    "snr": 79.52641390618982,
-                    "duration_secs_since_attack_start": 10.235177040100098
+                    "target_pred_confidence": 0.015629660338163376,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 18.83853268623352
                 },
                 {
-                    "target_pred_confidence": 0.002598644234240055,
-                    "snr": 79.18300453583214,
-                    "duration_secs_since_attack_start": 11.186730861663818
+                    "target_pred_confidence": 0.19403158128261566,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 20.168660163879395
                 },
                 {
-                    "target_pred_confidence": 0.0026134804356843233,
-                    "snr": 78.89956093126438,
-                    "duration_secs_since_attack_start": 11.677175998687744
+                    "target_pred_confidence": 0.6676657199859619,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 21.50028085708618
                 },
                 {
-                    "target_pred_confidence": 0.005629077088087797,
-                    "snr": 78.60024524439113,
-                    "duration_secs_since_attack_start": 12.630008220672607
-                },
-                {
-                    "target_pred_confidence": 0.010259437374770641,
-                    "snr": 78.34579406349698,
-                    "duration_secs_since_attack_start": 13.12350082397461
-                },
-                {
-                    "target_pred_confidence": 0.014536323957145214,
-                    "snr": 78.10295150367128,
-                    "duration_secs_since_attack_start": 14.071474552154541
-                },
-                {
-                    "target_pred_confidence": 0.013876405544579029,
-                    "snr": 77.84130569231947,
-                    "duration_secs_since_attack_start": 14.566063404083252
-                },
-                {
-                    "target_pred_confidence": 0.02370472438633442,
-                    "snr": 77.59097917433715,
-                    "duration_secs_since_attack_start": 15.530103206634521
-                },
-                {
-                    "target_pred_confidence": 0.05827569216489792,
-                    "snr": 77.402065258781,
-                    "duration_secs_since_attack_start": 16.01830768585205
-                },
-                {
-                    "target_pred_confidence": 0.058276910334825516,
-                    "snr": 77.23020599503529,
-                    "duration_secs_since_attack_start": 16.974104166030884
-                },
-                {
-                    "target_pred_confidence": 0.04548589512705803,
-                    "snr": 77.01790157176266,
-                    "duration_secs_since_attack_start": 17.471704721450806
-                },
-                {
-                    "target_pred_confidence": 0.10957329720258713,
-                    "snr": 76.81907125823754,
-                    "duration_secs_since_attack_start": 18.416481494903564
-                },
-                {
-                    "target_pred_confidence": 0.19533881545066833,
-                    "snr": 76.67778229156737,
-                    "duration_secs_since_attack_start": 18.90308427810669
-                },
-                {
-                    "target_pred_confidence": 0.3549119532108307,
-                    "snr": 76.5599501012643,
-                    "duration_secs_since_attack_start": 19.858516454696655
-                },
-                {
-                    "target_pred_confidence": 0.5106885433197021,
-                    "snr": 76.46673081350806,
-                    "duration_secs_since_attack_start": 20.351111888885498
-                },
-                {
-                    "target_pred_confidence": 0.727269172668457,
-                    "snr": 76.42321785030971,
-                    "duration_secs_since_attack_start": 21.298354387283325
-                },
-                {
-                    "target_pred_confidence": 0.893537700176239,
-                    "snr": 76.40514290207665,
-                    "duration_secs_since_attack_start": 21.795461416244507
-                },
-                {
-                    "target_pred_confidence": 0.9471971392631531,
-                    "snr": 76.40039228742057,
-                    "duration_secs_since_attack_start": 22.746894121170044
+                    "target_pred_confidence": 0.9944007992744446,
+                    "snr": 60.0,
+                    "duration_secs_since_attack_start": 22.85366129875183
                 }
             ]
         }
