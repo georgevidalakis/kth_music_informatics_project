@@ -181,8 +181,8 @@ class PGDAdversarialAttacker(AdversarialAttacker):
                 snr=snr,
                 duration_secs_since_attack_start=time.time() - start_timestamp,
             ))
-            # print(f'Iter {iter_idx}:')
-            # print(adversarial_iterations_results[-1].model_dump_json(indent=4))
+            print(f'Iter {iter_idx}:')
+            print(adversarial_iterations_results[-1].model_dump_json(indent=4))
             if init_target_pred_confidence is None:
                 init_target_pred_confidence = target_pred_confidence
             if target_pred_confidence > max_target_pred_confidence:
@@ -293,7 +293,7 @@ def main() -> None:
 
     audio_files_paths = [
         labeled_audio_file_path.audio_file_path
-        for labeled_audio_file_path in dataset_splits.adv_val
+        for labeled_audio_file_path in dataset_splits.test
         if labeled_audio_file_path.label == Label.AI.value
     ]
 
@@ -336,10 +336,11 @@ def main() -> None:
                 classifier=classifier,
             )
             if adversarial_experiment is not None:
-                adversarial_experiment_file_name = f'{get_random_hex_string(16)}.json'
+                adversarial_experiment_file_name = f'{get_random_hex_string(16)}_{int(time.time())}.json'
                 adversarial_experiment_file_path = os.path.join(
                     ADVERSARIAL_EXPERIMENTS_DIR_PATH, adversarial_experiment_file_name
                 )
+                assert not os.path.exists(adversarial_experiment_file_path)
                 with open(adversarial_experiment_file_path, 'w') as f:
                     json.dump(adversarial_experiment.model_dump(), f, indent=4)
                 print(f'Saved adversarial experiment to {adversarial_experiment_file_path}')

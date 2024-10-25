@@ -57,7 +57,7 @@ class TrainingUtils(ABC):
 
 
 class MLPTrainingUtils(TrainingUtils):
-    model_kind_name = 'mlp_new'
+    model_kind_name = 'mlp'
     does_model_return_embeddings = True
     num_epochs = 20
     num_hyperparameter_tuning_trials = 5
@@ -229,6 +229,10 @@ class LSTMTrainingUtils(TrainingUtils):
         train_batch_size: int
         learning_rate: float
         weight_decay: float
+        hidden_size: int
+        num_layers: int
+        dropout: float
+        bidirectional: bool
 
     @staticmethod
     def get_dataset(split: List[LabeledAudioFilePath], device: torch.device) -> Dataset:
@@ -250,7 +254,13 @@ class LSTMTrainingUtils(TrainingUtils):
         train_dataloader = DataLoader(
             train_dataset, batch_size=training_params.train_batch_size, shuffle=True, collate_fn=zero_pad
         )
-        model = DeepLSTMModel(input_size=CLAP_EMBEDDING_SIZE)
+        model = DeepLSTMModel(
+            input_size=CLAP_EMBEDDING_SIZE,
+            hidden_size=training_params.hidden_size,
+            num_layers=training_params.num_layers,
+            dropout=training_params.dropout,
+            bidirectional=training_params.bidirectional,
+        )
         if training_params.do_fit_scaler:
             model.fit_scaler(train_dataset.audios_embeddings)
         model.to(device)
@@ -264,13 +274,21 @@ class LSTMTrainingUtils(TrainingUtils):
         do_fit_scaler = trial.suggest_categorical('do_fit_scaler', [True, False])
         train_batch_size_exp = trial.suggest_int('train_batch_size_exp', 4, 6)
         train_batch_size = 2 ** train_batch_size_exp
-        learning_rate = trial.suggest_float('learning_rate', 1e-3, 1e-1, log=True)
+        learning_rate = trial.suggest_float('learning_rate', 1e-4, 1e-2, log=True)
         weight_decay = trial.suggest_float('weight_decay', 1e-5, 1e-3, log=True)
+        hidden_size = 2 ** trial.suggest_int('hidden_size_exp', 6, 8)
+        num_layers = trial.suggest_int('num_layers', 2, 3)
+        dropout = trial.suggest_float('dropout', 0.0, 0.5)
+        bidirectional = trial.suggest_categorical('bidirectional', [True, False])
         return LSTMTrainingUtils.LSTMTrainingParams(
             do_fit_scaler=do_fit_scaler,
             train_batch_size=train_batch_size,
             learning_rate=learning_rate,
             weight_decay=weight_decay,
+            hidden_size=hidden_size,
+            num_layers=num_layers,
+            dropout=dropout,
+            bidirectional=bidirectional,
         )
 
     @staticmethod
@@ -280,6 +298,10 @@ class LSTMTrainingUtils(TrainingUtils):
             train_batch_size=2 ** study.best_trial.params['train_batch_size_exp'],
             learning_rate=study.best_trial.params['learning_rate'],
             weight_decay=study.best_trial.params['weight_decay'],
+            hidden_size=2 ** study.best_trial.params['hidden_size_exp'],
+            num_layers=study.best_trial.params['num_layers'],
+            dropout=study.best_trial.params['dropout'],
+            bidirectional=study.best_trial.params['bidirectional'],
         )
 
 

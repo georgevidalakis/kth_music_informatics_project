@@ -1,6 +1,10 @@
 {
-    "do_fit_scaler": true,
-    "train_batch_size": 32,
-    "learning_rate": 0.0011210651435255023,
-    "weight_decay": 0.00019236969467169735
+    "do_fit_scaler": false,
+    "train_batch_size": 16,
+    "learning_rate": 0.0006298519242092977,
+    "weight_decay": 0.00001938142059826024,
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.3853898757085019,
+    "bidirectional": false
 }
