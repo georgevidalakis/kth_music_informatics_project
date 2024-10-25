@@ -8,7 +8,7 @@ In the project we explore how we can perform an Adversarial attack using Project
 The Music classifier first learns to discriminate between Human & AI generated music. 
 
 **Dataset:**
-Visualization of CLAP embeddings using TSNR. By rotating our points in reduced 3D space we notice we could train a network to learn non-linear decision boundary. 
+Visualization of CLAP embeddings using TSNE. By rotating our points in reduced 3D space we notice we could train a network to learn non-linear decision boundary. 
 
 ![image](https://github.com/user-attachments/assets/36342758-fefe-4b03-8c96-63fb8c86b498)
 
