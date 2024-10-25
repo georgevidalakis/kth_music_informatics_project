@@ -8,6 +8,9 @@ from adversarial_models import AdversarialExperiment, AdversarialExperimentParam
 from constants import CLAP_SR, ADVERSARIAL_EXPERIMENTS_DIR_PATH
 
 
+ADVERSARIAL_EXPERIMENTS_DIR_PATH = 'adversarial_experiments_copy/mlp/adv_val'
+
+
 # for a specific min_snr, max_iter and required_target_pred_confidence: compare the attack success rate for different learning rates (plot)
 # for a specific min_snr, max_iter and required_target_pred_confidence: compare the mean num_iter (when successful) of different learning rates
 
@@ -111,13 +114,35 @@ def plot_mean_num_iter_to_success(
     plt.show()
 
 
+# def main() -> None:
+#     plot_mean_num_iter_to_success(
+#         min_snr=60.,
+#         max_iter=50,
+#         required_target_pred_confidence=0.9,
+#         learning_rate_values=[0.000001, 0.00001, 0.0001],
+#     )
+
+
 def main() -> None:
-    plot_mean_num_iter_to_success(
-        min_snr=60.,
-        max_iter=50,
-        required_target_pred_confidence=0.9,
-        learning_rate_values=[0.000001, 0.00001, 0.0001],
+    max_iter = 50
+    required_target_pred_confidence = 0.9
+
+    min_snr = 60.
+    learning_rate = 1e-4
+
+    adversarial_experiment_params = AdversarialExperimentParams(
+        window_size=WINDOW_SIZE,
+        hop_size=HOP_SIZE,
+        min_snr=min_snr,
+        max_iter=max_iter,
+        required_target_pred_confidence=required_target_pred_confidence,
+        learning_rate=learning_rate,
     )
+    adversarial_experiment = get_covering_adversarial_experiment(adversarial_experiment_params)
+    success_rate = get_attack_success_rate(adversarial_experiment, max_iter, required_target_pred_confidence)
+    average_iterations = get_mean_num_iter_to_success(adversarial_experiment, max_iter, required_target_pred_confidence)
+    print(f'Success rate: {100 * success_rate:.2f}%')
+    print(f'Average iterations to success: {average_iterations:.2f}')
 
 
 if __name__ == '__main__':

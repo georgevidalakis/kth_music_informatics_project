@@ -32,6 +32,9 @@ from constants import (
 )
 
 
+ADVERSARIAL_AUDIO_FILE_NAME = None
+
+
 class AudioWindowsDataIterator:
     def __init__(self, audio_data: torch.Tensor, window_size: int, hop_size: int) -> None:
         self.audio_data = audio_data
@@ -272,8 +275,23 @@ def run_adversarial_experiment(
         # print(adversarial_result.model_dump_json(
         #     indent=4, exclude={'audio_file_path'}
         # ))
-        # adversarial_audio_file_path = os.path.join(ADVERSARIAL_AUDIO_DIR_PATH, audio_file_name)
-        # sf.write(adversarial_audio_file_path, data=argmax_adversarial_audio_data, samplerate=CLAP_SR)
+        adversarial_audio_file_path = os.path.join(ADVERSARIAL_AUDIO_DIR_PATH, audio_file_name)
+
+        audio_windows_embeddings = audio_windows_embeddings_extractor(torch.tensor(argmax_adversarial_audio_data).to('cuda:0'))
+        audio_embedding = torch.mean(audio_windows_embeddings, dim=0)
+        confidence = classifier(audio_embedding)[0].item()
+        print(f'Confidence: {confidence}')
+        sf.write(f'demo/{ADVERSARIAL_AUDIO_FILE_NAME}', data=argmax_adversarial_audio_data, samplerate=CLAP_SR)
+
+        audio_data = torch.tensor(load_audio_data_for_clap(f'demo/{ADVERSARIAL_AUDIO_FILE_NAME}'))
+        audio_windows_embeddings = audio_windows_embeddings_extractor(audio_data)
+        audio_embedding = torch.mean(audio_windows_embeddings, dim=0)
+        confidence = classifier(audio_embedding)[0].item()
+        print(f'Confidence: {confidence}')
+        print(len(argmax_adversarial_audio_data), len(audio_data))
+        exit(2)
+
+
         print()
     return AdversarialExperiment(
         params=adversarial_experiment_params,
@@ -346,5 +364,59 @@ def main() -> None:
                 print(f'Saved adversarial experiment to {adversarial_experiment_file_path}')
 
 
+import argparse
+
+
+def demo() -> None:
+    seed_everything(42)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--input', type=str)
+    parser.add_argument('-o', '--output', type=str)
+    args = parser.parse_args()
+    audio_files_paths = [f'demo/{args.input}']
+    global ADVERSARIAL_AUDIO_FILE_NAME
+    ADVERSARIAL_AUDIO_FILE_NAME = args.output
+
+    clap_model = load_clap_music_model(use_cuda=True)
+
+    classifier_checkpoint_dir_path = os.path.join(CLASSIFIERS_CHECKPOINTS_DIR_PATH, 'mlp')
+    classifier_training_params_file_path = os.path.join(classifier_checkpoint_dir_path, 'training_params.json')
+    classifier_checkpoint_file_path = os.path.join(classifier_checkpoint_dir_path, 'classifier.pt')
+    with open(classifier_training_params_file_path) as f:
+        training_params = TrainingParams.model_validate_json(f.read())
+    classifier = MLP(
+        input_size=CLAP_EMBEDDING_SIZE,
+        hidden_size_0=training_params.hidden_size_0,
+        hidden_size_1=training_params.hidden_size_1,
+        dropout=training_params.dropout,
+    ).to('cuda:0')
+    classifier.load_state_dict(torch.load(classifier_checkpoint_file_path, weights_only=True))
+
+    window_size = int(10 * CLAP_SR)
+    hop_size = int(10 * CLAP_SR)
+    max_iter = 50
+    required_target_pred_confidence = 0.995
+    min_snr_values = [40.]
+    learning_rate_values = [1e-3]
+
+    for min_snr in min_snr_values:
+        for learning_rate in learning_rate_values:
+            adversarial_experiment_params = AdversarialExperimentParams(
+                window_size=window_size,
+                hop_size=hop_size,
+                min_snr=min_snr,
+                max_iter=max_iter,
+                required_target_pred_confidence=required_target_pred_confidence,
+                learning_rate=learning_rate,
+            )
+            run_adversarial_experiment(
+                adversarial_experiment_params=adversarial_experiment_params,
+                audio_files_paths=audio_files_paths,
+                clap_model=clap_model,
+                classifier=classifier,
+            )
+
+
 if __name__ == '__main__':
-    main()
+    demo()
